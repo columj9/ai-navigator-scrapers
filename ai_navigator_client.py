@@ -156,7 +156,7 @@ class AINavigatorClient:
             # Note: This assumes there's a search/filter endpoint
             # You may need to adjust based on actual API structure
             response = requests.get(
-                f"{self.base_url}/entities",
+                f"{self.api_base_url}/entities",
                 params={"website_url": website_url},
                 headers=self._get_headers(),
                 timeout=10
