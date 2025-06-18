@@ -1,0 +1,126 @@
+2025-06-18 05:43:13,766 - ai_navigator_client - ERROR - Failed to get categories: 404
+2025-06-18 05:43:13,767 - taxonomy_service - INFO - Loaded 0 categories
+2025-06-18 05:43:13,858 - ai_navigator_client - ERROR - Failed to get tags: 404
+2025-06-18 05:43:13,858 - taxonomy_service - INFO - Loaded 0 tags
+2025-06-18 05:43:13,983 - ai_navigator_client - ERROR - Failed to login: 404 - {"message":"Cannot POST /api/auth/login","error":"Not Found","statusCode":404}
+2025-06-18 05:43:14,091 - ai_navigator_client - ERROR - Failed to get features: 404
+2025-06-18 05:43:14,091 - taxonomy_service - INFO - Loaded 0 features
+2025-06-18 05:43:14,193 - ai_navigator_client - ERROR - Failed to get categories: 404
+2025-06-18 05:43:19,433 - data_enrichment_service - INFO - Successfully enriched data for ChatGPT
+2025-06-18 05:52:12,011 - ai_navigator_client - INFO - Successfully refreshed AI Navigator API token
+2025-06-18 05:52:12,115 - taxonomy_service - INFO - Loaded 9 categories
+2025-06-18 05:52:12,230 - taxonomy_service - INFO - Loaded 15 tags
+2025-06-18 05:52:12,331 - taxonomy_service - INFO - Loaded 8 features
+2025-06-18 05:52:12,331 - enhanced_item_processor - INFO - Processing lead: Web Gremlin from futuretools.io
+2025-06-18 05:52:17,772 - data_enrichment_service - INFO - Successfully enriched data for Web Gremlin
+2025-06-18 05:52:21,172 - taxonomy_service - WARNING - Could not map category: 'AI'
+2025-06-18 05:52:21,173 - taxonomy_service - WARNING - Could not map category: 'Website optimization'
+2025-06-18 05:52:21,173 - taxonomy_service - WARNING - Could not map category: 'Digital diagnostics'
+2025-06-18 05:52:21,173 - taxonomy_service - WARNING - Could not map tag: 'AI-powered'
+2025-06-18 05:52:21,174 - taxonomy_service - WARNING - Could not map tag: 'Website analysis'
+2025-06-18 05:52:21,174 - taxonomy_service - WARNING - Could not map tag: 'SEO improvement'
+2025-06-18 05:52:21,175 - taxonomy_service - WARNING - Could not map tag: 'Security assessment'
+2025-06-18 05:52:21,175 - taxonomy_service - WARNING - Could not map feature: 'AI-powered analysis'
+2025-06-18 05:52:21,175 - taxonomy_service - WARNING - Could not map feature: 'Comprehensive website diagnostics'
+2025-06-18 05:52:21,176 - taxonomy_service - WARNING - Could not map feature: 'Actionable recommendations'
+2025-06-18 05:52:21,176 - taxonomy_service - WARNING - Could not map feature: 'User-friendly interface'
+2025-06-18 05:52:21,177 - taxonomy_service - WARNING - Could not map feature: 'No extensive technical knowledge required'
+2025-06-18 05:52:21,177 - enhanced_item_processor - INFO - Successfully processed lead for Web Gremlin
+2025-06-18 05:54:11,787 - ai_navigator_client - INFO - Successfully refreshed AI Navigator API token
+2025-06-18 05:54:11,888 - taxonomy_service - INFO - Loaded 9 categories
+2025-06-18 05:54:11,989 - taxonomy_service - INFO - Loaded 15 tags
+2025-06-18 05:54:12,092 - taxonomy_service - INFO - Loaded 8 features
+2025-06-18 05:54:12,092 - enhanced_item_processor - INFO - Processing lead: ChatGPT Test Tool from test
+2025-06-18 05:54:12,388 - enhanced_item_processor - WARNING - Could not scrape website data from https://chat.openai.com: 403 Client Error: Forbidden for url: https://chatgpt.com/
+2025-06-18 05:54:17,154 - data_enrichment_service - INFO - Successfully enriched data for ChatGPT Test Tool
+2025-06-18 05:54:19,900 - taxonomy_service - WARNING - Could not map category: 'AI Tools'
+2025-06-18 05:54:19,901 - taxonomy_service - WARNING - Could not map category: 'Software Testing'
+2025-06-18 05:54:19,901 - taxonomy_service - WARNING - Could not map tag: 'AI'
+2025-06-18 05:54:19,902 - taxonomy_service - WARNING - Could not map tag: 'Software Testing'
+2025-06-18 05:54:19,903 - taxonomy_service - WARNING - Could not map tag: 'Automation'
+2025-06-18 05:54:19,903 - taxonomy_service - WARNING - Could not map feature: 'Test Case Generation'
+2025-06-18 05:54:19,904 - taxonomy_service - WARNING - Could not map feature: 'Detailed Test Plans'
+2025-06-18 05:54:19,904 - taxonomy_service - WARNING - Could not map feature: 'Application Functionality Descriptions'
+2025-06-18 05:54:19,905 - taxonomy_service - WARNING - Could not map feature: 'Scenario and Test Case Devise'
+2025-06-18 05:54:19,905 - taxonomy_service - WARNING - Could not map feature: 'Regression Testing Assistance'
+2025-06-18 05:54:19,906 - taxonomy_service - WARNING - Could not map feature: 'Unit Test Creation'
+2025-06-18 05:54:19,906 - taxonomy_service - WARNING - Could not map feature: 'Automated Test Management Recommendations'
+2025-06-18 05:54:19,907 - taxonomy_service - WARNING - Could not map feature: 'Code Explanation'
+2025-06-18 05:54:19,907 - enhanced_item_processor - INFO - Successfully processed lead for ChatGPT Test Tool
+2025-06-18 05:54:20,015 - ai_navigator_client - ERROR - Failed to create entity: 404 - {"message":"Cannot POST /api/entities","error":"Not Found","statusCode":404}
+2025-06-18 05:54:20,015 - ai_navigator_client - ERROR - Entity data: {
+  "name": "ChatGPT Test Tool",
+  "website_url": "https://chat.openai.com",
+  "entity_type_id": "82d988e5-df78-4d63-a1a3-ed2159cf0c68",
+  "short_description": "AI tool for generating test cases, providing test plans, and assisting in test automation.",
+  "description": "ChatGPT is an AI tool that can generate test cases in different programming languages, create detailed test plans, and supply descriptions for application functionality. It can also devise scenarios and corresponding test cases, expanding test coverage. Additionally, it stores conversations, which proves invaluable for regression testing. ChatGPT can be used to create unit tests, provide recommendations on how to manage automated tests, and explain what the code is doing as it runs.",
+  "category_ids": [
+    "65897591-5a7a-4696-a274-b1796ed19ba8"
+  ],
+  "meta_title": "ChatGPT Test Tool | AI Navigator",
+  "meta_description": "AI tool for generating test cases, providing test plans, and assisting in test automation.",
+  "employee_count_range": "500+",
+  "ref_link": "https://chat.openai.com",
+  "affiliate_status": "PENDING",
+  "status": "PENDING",
+  "tool_details": {
+    "learning_curve": "MEDIUM",
+    "key_features": [
+      "Test Case Generation",
+      "Detailed Test Plans",
+      "Application Functionality Descriptions",
+      "Scenario and Test Case Devise",
+      "Regression Testing Assistance",
+      "Unit Test Creation",
+      "Automated Test Management Recommendations",
+      "Code Explanation"
+    ],
+    "has_free_tier": false,
+    "use_cases": [
+      "Software Testing",
+      "Quality Assurance",
+      "Test Automation",
+      "Regression Testing"
+    ],
+    "pricing_model": "SUBSCRIPTION",
+    "price_range": "MEDIUM",
+    "pricing_details": "Pricing details are not explicitly mentioned, but it is likely subscription-based given its advanced capabilities and integration with various tools.",
+    "integrations": [
+      "Web Browsing",
+      "File Uploads (Documents)",
+      "Image Input and Generation"
+    ],
+    "has_live_chat": false,
+    "target_audience": [
+      "Software Developers",
+      "Quality Assurance Engineers",
+      "Software Testers"
+    ],
+    "mobile_support": false,
+    "api_access": true,
+    "customization_level": "Medium",
+    "trial_available": false,
+    "demo_available": false,
+    "open_source": false,
+    "support_channels": [
+      "Email",
+      "Documentation"
+    ]
+  }
+}
+2025-06-18 05:55:15,942 - ai_navigator_client - INFO - Successfully refreshed AI Navigator API token
+2025-06-18 05:55:16,134 - taxonomy_service - INFO - Loaded 9 categories
+2025-06-18 05:55:16,247 - taxonomy_service - INFO - Loaded 15 tags
+2025-06-18 05:55:16,351 - taxonomy_service - INFO - Loaded 8 features
+2025-06-18 05:55:16,352 - enhanced_item_processor - INFO - Processing lead: Simple AI Test Tool from test
+2025-06-18 05:55:19,972 - data_enrichment_service - INFO - Successfully enriched data for Simple AI Test Tool
+2025-06-18 05:55:23,007 - taxonomy_service - WARNING - Could not map category: 'AI testing tools'
+2025-06-18 05:55:23,008 - taxonomy_service - WARNING - Could not map category: 'Software testing automation'
+2025-06-18 05:55:23,009 - taxonomy_service - WARNING - Could not map tag: 'AI automation'
+2025-06-18 05:55:23,009 - taxonomy_service - WARNING - Could not map tag: 'Machine learning'
+2025-06-18 05:55:23,010 - taxonomy_service - WARNING - Could not map tag: 'Software quality assurance'
+2025-06-18 05:55:23,011 - taxonomy_service - WARNING - Could not map feature: 'AI-supported testing'
+2025-06-18 05:55:23,012 - taxonomy_service - WARNING - Could not map feature: 'Dynamic object identification'
+2025-06-18 05:55:23,013 - taxonomy_service - WARNING - Could not map feature: 'Predictive analytics'
+2025-06-18 05:55:23,014 - taxonomy_service - WARNING - Could not map feature: 'Adaptive UI interaction'
+2025-06-18 05:55:23,014 - enhanced_item_processor - INFO - Successfully processed lead for Simple AI Test Tool
