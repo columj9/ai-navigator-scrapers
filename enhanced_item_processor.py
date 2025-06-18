@@ -200,10 +200,8 @@ class EnhancedItemProcessor:
             return {}
     
     def _get_entity_type_id(self) -> str:
-        """Get the entity type ID for tools - this should be a valid UUID from your system"""
-        # This is a placeholder - you'll need to provide the actual entity type UUID for "tools"
-        # You can get this from the API or hardcode it based on your system
-        return "00000000-0000-0000-0000-000000000001"  # Placeholder UUID
+        """Get the entity type ID for AI tools"""
+        return "82d988e5-df78-4d63-a1a3-ed2159cf0c68"  # AI Tool entity type ID
     
     def _clean_null_values(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """Recursively remove null/empty values from the data structure"""
