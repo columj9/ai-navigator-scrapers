@@ -11,8 +11,9 @@ from datetime import datetime, timedelta
 import json
 
 class AINavigatorClient:
-    def __init__(self, base_url: str = "https://ai-nav.onrender.com/api"):
+    def __init__(self, base_url: str = "https://ai-nav.onrender.com"):
         self.base_url = base_url.rstrip('/')
+        self.api_base_url = f"{self.base_url}/api"
         self.admin_email = "columj9+admin@gmail.com"
         self.admin_password = "testtest"
         self.access_token = None
