@@ -95,7 +95,8 @@ class AINavigatorClient:
         """Get all categories"""
         try:
             response = requests.get(
-                f"{self.base_url}/public/categories",
+                f"{self.base_url}/categories",
+                headers=self._get_headers(),
                 timeout=10
             )
             
@@ -113,7 +114,8 @@ class AINavigatorClient:
         """Get all tags"""
         try:
             response = requests.get(
-                f"{self.base_url}/public/tags",
+                f"{self.base_url}/tags",
+                headers=self._get_headers(),
                 timeout=10
             )
             
