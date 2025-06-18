@@ -46,7 +46,7 @@ class AINavigatorClient:
             }
             
             response = requests.post(
-                f"{self.base_url}/auth/login",
+                f"{self.base_url.replace('/api', '')}/auth/login",
                 json=login_data,
                 headers={"Content-Type": "application/json"},
                 timeout=10
