@@ -75,7 +75,7 @@ class AINavigatorClient:
         """Create a new entity via POST /entities"""
         try:
             response = requests.post(
-                f"{self.base_url}/entities",
+                f"{self.api_base_url}/entities",
                 json=entity_data,
                 headers=self._get_headers(),
                 timeout=30
