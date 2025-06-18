@@ -54,9 +54,10 @@ class AINavigatorClient:
             
             if response.status_code == 200:
                 data = response.json()
-                self.access_token = data.get('access_token')
-                # Assume token expires in 1 hour if not specified
-                expires_in = data.get('expires_in', 3600)
+                session = data.get('session', {})
+                self.access_token = session.get('access_token')
+                # Use expires_in from the session data
+                expires_in = session.get('expires_in', 3600)
                 self.token_expiry = datetime.now() + timedelta(seconds=expires_in)
                 
                 self.logger.info("Successfully refreshed AI Navigator API token")
