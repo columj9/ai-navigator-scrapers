@@ -1,0 +1,224 @@
+"""
+Enhanced Item Processor
+Transforms basic scraped leads into full CreateEntityDto objects for the AI Navigator API
+"""
+
+import logging
+from typing import Dict, Any, Optional, List
+from urllib.parse import urlparse
+import requests
+from bs4 import BeautifulSoup
+import re
+from datetime import datetime
+
+class EnhancedItemProcessor:
+    def __init__(self, ai_navigator_client, data_enrichment_service, taxonomy_service):
+        self.client = ai_navigator_client
+        self.enrichment_service = data_enrichment_service
+        self.taxonomy_service = taxonomy_service
+        self.logger = logging.getLogger(__name__)
+    
+    def process_lead_item(self, lead_item: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        """Transform a basic lead item into a full CreateEntityDto object"""
+        
+        tool_name = lead_item.get('tool_name_on_directory', '').strip()
+        website_url = lead_item.get('external_website_url', '').strip()
+        source_directory = lead_item.get('source_directory', '')
+        
+        if not tool_name or not website_url:
+            self.logger.error("Missing required fields: tool_name or website_url")
+            return None
+        
+        self.logger.info(f"Processing lead: {tool_name} from {source_directory}")
+        
+        # Check if entity already exists
+        existing_entity = self.client.check_entity_exists(website_url)
+        if existing_entity:
+            self.logger.info(f"Entity already exists for {website_url}, skipping")
+            return None
+        
+        # Scrape basic info from tool website
+        website_data = self._scrape_website_data(website_url)
+        
+        # Enrich data using Perplexity API
+        enriched_data = self.enrichment_service.enrich_tool_data(
+            tool_name, 
+            website_url, 
+            website_data.get('description', '')
+        )
+        
+        # Get company information
+        company_info = self.enrichment_service.get_company_info(tool_name, website_url)
+        
+        # Map categories, tags, and features to UUIDs
+        category_ids = self.taxonomy_service.map_categories(enriched_data.get('categories', []))
+        tag_ids = self.taxonomy_service.map_tags(enriched_data.get('tags', []))
+        feature_ids = self.taxonomy_service.map_features(enriched_data.get('key_features', []))
+        
+        # Ensure at least one category
+        if not category_ids:
+            default_category = self.taxonomy_service.get_default_category_id()
+            if default_category:
+                category_ids = [default_category]
+        
+        # Create entity_type_id (assuming "tool" is the default type)
+        entity_type_id = self._get_entity_type_id()
+        
+        # Build CreateEntityDto object
+        create_entity_dto = {
+            "name": tool_name,
+            "website_url": website_url,
+            "entity_type_id": entity_type_id,
+            "short_description": enriched_data.get('short_description', f"{tool_name} - AI-powered productivity tool"),
+            "description": enriched_data.get('description', ''),
+            "logo_url": website_data.get('logo_url'),
+            "documentation_url": website_data.get('documentation_url'),
+            "contact_url": website_data.get('contact_url'),
+            "privacy_policy_url": website_data.get('privacy_policy_url'),
+            "founded_year": company_info.get('founded_year'),
+            "social_links": company_info.get('social_links', {}),
+            "category_ids": category_ids[:3],  # Limit to 3 categories
+            "tag_ids": tag_ids[:10],          # Limit to 10 tags
+            "feature_ids": feature_ids[:10],   # Limit to 10 features
+            "meta_title": f"{tool_name} | AI Navigator",
+            "meta_description": enriched_data.get('short_description', '')[:160],
+            "employee_count_range": company_info.get('employee_count_range'),
+            "funding_stage": company_info.get('funding_stage'),
+            "location_summary": company_info.get('location_summary'),
+            "ref_link": website_url,
+            "affiliate_status": "PENDING",
+            "status": "PENDING",
+            "scraped_review_sentiment_label": None,  # V1 - skip sentiment analysis
+            "scraped_review_sentiment_score": None,
+            "scraped_review_count": None,
+            
+            # Tool-specific details
+            "tool_details": {
+                "learning_curve": "MEDIUM",  # Default
+                "key_features": enriched_data.get('key_features', []),
+                "has_free_tier": enriched_data.get('has_free_tier', False),
+                "use_cases": enriched_data.get('use_cases', []),
+                "pricing_model": enriched_data.get('pricing_model', 'FREEMIUM'),
+                "price_range": enriched_data.get('price_range', 'MEDIUM'),
+                "pricing_details": enriched_data.get('pricing_details'),
+                "pricing_url": website_data.get('pricing_url'),
+                "integrations": enriched_data.get('integrations', []),
+                "support_email": website_data.get('support_email'),
+                "has_live_chat": False,  # Default
+                "community_url": website_data.get('community_url'),
+                "programming_languages": [],
+                "frameworks": [],
+                "libraries": [],
+                "target_audience": enriched_data.get('target_audience', []),
+                "deployment_options": [],
+                "supported_os": [],
+                "mobile_support": enriched_data.get('mobile_support', False),
+                "api_access": enriched_data.get('api_access', False),
+                "customization_level": "Medium",
+                "trial_available": enriched_data.get('has_free_tier', False),
+                "demo_available": False,
+                "open_source": False,
+                "support_channels": ["Email", "Documentation"]
+            }
+        }
+        
+        # Remove null values to keep payload clean
+        create_entity_dto = self._clean_null_values(create_entity_dto)
+        
+        self.logger.info(f"Successfully processed lead for {tool_name}")
+        return create_entity_dto
+    
+    def _scrape_website_data(self, website_url: str) -> Dict[str, Any]:
+        """Scrape basic information from the tool's website"""
+        try:
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
+            }
+            
+            response = requests.get(website_url, headers=headers, timeout=15)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # Extract basic website data
+            data = {}
+            
+            # Try to find logo
+            logo_selectors = [
+                'img[alt*="logo"]',
+                'img[class*="logo"]',
+                'img[src*="logo"]',
+                '.logo img',
+                'header img'
+            ]
+            
+            for selector in logo_selectors:
+                logo_img = soup.select_one(selector)
+                if logo_img and logo_img.get('src'):
+                    logo_url = logo_img['src']
+                    if not logo_url.startswith('http'):
+                        logo_url = requests.compat.urljoin(website_url, logo_url)
+                    data['logo_url'] = logo_url
+                    break
+            
+            # Try to find description from meta tags
+            meta_desc = soup.find('meta', attrs={'name': 'description'})
+            if meta_desc:
+                data['description'] = meta_desc.get('content', '')
+            
+            # Look for common URLs
+            links = soup.find_all('a')
+            for link in links:
+                href = link.get('href', '').lower()
+                text = link.get_text().lower()
+                
+                if 'pricing' in href or 'pricing' in text:
+                    data['pricing_url'] = requests.compat.urljoin(website_url, link['href'])
+                elif 'contact' in href or 'contact' in text:
+                    data['contact_url'] = requests.compat.urljoin(website_url, link['href'])
+                elif 'privacy' in href or 'privacy' in text:
+                    data['privacy_policy_url'] = requests.compat.urljoin(website_url, link['href'])
+                elif 'docs' in href or 'documentation' in href:
+                    data['documentation_url'] = requests.compat.urljoin(website_url, link['href'])
+                elif 'community' in href or 'discord' in href or 'slack' in href:
+                    data['community_url'] = requests.compat.urljoin(website_url, link['href'])
+            
+            # Look for support email
+            email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+            page_text = soup.get_text()
+            emails = re.findall(email_pattern, page_text)
+            
+            for email in emails:
+                if any(word in email.lower() for word in ['support', 'help', 'contact', 'info']):
+                    data['support_email'] = email
+                    break
+            
+            return data
+            
+        except Exception as e:
+            self.logger.warning(f"Could not scrape website data from {website_url}: {str(e)}")
+            return {}
+    
+    def _get_entity_type_id(self) -> str:
+        """Get the entity type ID for tools - this should be a valid UUID from your system"""
+        # This is a placeholder - you'll need to provide the actual entity type UUID for "tools"
+        # You can get this from the API or hardcode it based on your system
+        return "00000000-0000-0000-0000-000000000001"  # Placeholder UUID
+    
+    def _clean_null_values(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Recursively remove null/empty values from the data structure"""
+        if isinstance(data, dict):
+            cleaned = {}
+            for key, value in data.items():
+                if value is not None and value != "" and value != []:
+                    if isinstance(value, (dict, list)):
+                        cleaned_value = self._clean_null_values(value)
+                        if cleaned_value:  # Only add if not empty after cleaning
+                            cleaned[key] = cleaned_value
+                    else:
+                        cleaned[key] = value
+            return cleaned
+        elif isinstance(data, list):
+            return [self._clean_null_values(item) for item in data if item is not None and item != ""]
+        else:
+            return data
