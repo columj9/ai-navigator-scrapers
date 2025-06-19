@@ -381,26 +381,68 @@ class EnhancedItemProcessor:
     
     def _normalize_pricing_model(self, pricing_model: str) -> str:
         """Normalize pricing model to match API enum values"""
-        pricing_model = pricing_model.upper().strip()
+        if not pricing_model:
+            return 'FREEMIUM'  # Safe default
+            
+        pricing_model_clean = str(pricing_model).upper().strip()
         
-        # Map common variations to valid enum values
+        # Comprehensive mapping for pricing models
         pricing_map = {
             'FREE': 'FREE',
             'FREEMIUM': 'FREEMIUM', 
             'SUBSCRIPTION': 'SUBSCRIPTION',
             'PAID': 'SUBSCRIPTION',  # Map PAID to SUBSCRIPTION
+            'MONTHLY': 'SUBSCRIPTION',
+            'YEARLY': 'SUBSCRIPTION',
+            'RECURRING': 'SUBSCRIPTION',
+            'SaaS': 'SUBSCRIPTION',
             'PAY_PER_USE': 'PAY_PER_USE',
+            'PAY PER USE': 'PAY_PER_USE',
+            'PAYPERUSE': 'PAY_PER_USE',
+            'USAGE_BASED': 'PAY_PER_USE',
+            'CREDITS': 'PAY_PER_USE',
+            'TOKENS': 'PAY_PER_USE',
             'ONE_TIME_PURCHASE': 'ONE_TIME_PURCHASE',
             'ONE-TIME': 'ONE_TIME_PURCHASE',
             'ONETIME': 'ONE_TIME_PURCHASE',
+            'ONE TIME': 'ONE_TIME_PURCHASE',
+            'PURCHASE': 'ONE_TIME_PURCHASE',
+            'LIFETIME': 'ONE_TIME_PURCHASE',
             'CONTACT_SALES': 'CONTACT_SALES',
             'CONTACT': 'CONTACT_SALES',
+            'ENTERPRISE': 'CONTACT_SALES',
+            'CUSTOM': 'CONTACT_SALES',
+            'QUOTE': 'CONTACT_SALES',
             'OPEN_SOURCE': 'OPEN_SOURCE',
             'OPEN': 'OPEN_SOURCE',
-            'ENTERPRISE': 'CONTACT_SALES'
+            'OSS': 'OPEN_SOURCE',
+            'MIT': 'OPEN_SOURCE',
+            'GPL': 'OPEN_SOURCE',
+            'APACHE': 'OPEN_SOURCE'
         }
         
-        return pricing_map.get(pricing_model, 'FREEMIUM')  # Default to FREEMIUM
+        # Check direct mapping first
+        if pricing_model_clean in pricing_map:
+            return pricing_map[pricing_model_clean]
+        
+        # Try partial matches
+        if any(word in pricing_model_clean for word in ['FREE', 'NO COST', 'ZERO']):
+            return 'FREE'
+        elif any(word in pricing_model_clean for word in ['FREEMIUM', 'FREE TIER', 'FREE PLAN']):
+            return 'FREEMIUM'
+        elif any(word in pricing_model_clean for word in ['SUBSCRIPTION', 'MONTHLY', 'YEARLY', 'RECURRING']):
+            return 'SUBSCRIPTION'
+        elif any(word in pricing_model_clean for word in ['PAY PER', 'USAGE', 'CREDITS', 'TOKENS']):
+            return 'PAY_PER_USE'
+        elif any(word in pricing_model_clean for word in ['ONE TIME', 'LIFETIME', 'PURCHASE']):
+            return 'ONE_TIME_PURCHASE'
+        elif any(word in pricing_model_clean for word in ['CONTACT', 'ENTERPRISE', 'CUSTOM']):
+            return 'CONTACT_SALES'
+        elif any(word in pricing_model_clean for word in ['OPEN', 'SOURCE', 'MIT', 'GPL']):
+            return 'OPEN_SOURCE'
+        
+        # Default to FREEMIUM as safe choice
+        return 'FREEMIUM'
     
     def _normalize_price_range(self, price_range: str) -> str:
         """Normalize price range to match API enum values"""
