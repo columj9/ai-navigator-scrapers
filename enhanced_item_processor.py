@@ -199,6 +199,29 @@ class EnhancedItemProcessor:
             self.logger.warning(f"Could not scrape website data from {website_url}: {str(e)}")
             return {}
     
+    def _normalize_pricing_model(self, pricing_model: str) -> str:
+        """Normalize pricing model to match API enum values"""
+        pricing_model = pricing_model.upper().strip()
+        
+        # Map common variations to valid enum values
+        pricing_map = {
+            'FREE': 'FREE',
+            'FREEMIUM': 'FREEMIUM', 
+            'SUBSCRIPTION': 'SUBSCRIPTION',
+            'PAID': 'SUBSCRIPTION',  # Map PAID to SUBSCRIPTION
+            'PAY_PER_USE': 'PAY_PER_USE',
+            'ONE_TIME_PURCHASE': 'ONE_TIME_PURCHASE',
+            'ONE-TIME': 'ONE_TIME_PURCHASE',
+            'ONETIME': 'ONE_TIME_PURCHASE',
+            'CONTACT_SALES': 'CONTACT_SALES',
+            'CONTACT': 'CONTACT_SALES',
+            'OPEN_SOURCE': 'OPEN_SOURCE',
+            'OPEN': 'OPEN_SOURCE',
+            'ENTERPRISE': 'CONTACT_SALES'
+        }
+        
+        return pricing_map.get(pricing_model, 'FREEMIUM')  # Default to FREEMIUM
+    
     def _get_entity_type_id(self) -> str:
         """Get the entity type ID for AI tools"""
         return "82d988e5-df78-4d63-a1a3-ed2159cf0c68"  # AI Tool entity type ID
