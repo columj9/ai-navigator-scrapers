@@ -100,6 +100,10 @@ class EnhancedItemProcessor:
         # Scrape basic info from the actual tool website
         website_data = self._scrape_website_data(actual_website_url)
         
+        # Get guaranteed logo using enhanced logo extraction
+        logo_url = self.logo_enhancer.get_comprehensive_logo(actual_website_url, tool_name)
+        website_data['logo_url'] = logo_url  # Ensure we always have a logo
+        
         # Enhanced data enrichment with more context
         enriched_data = self.enrichment_service.enrich_tool_data(
             tool_name, 
