@@ -53,7 +53,7 @@ class TaxonomyService:
         except Exception as e:
             self.logger.error(f"Error loading taxonomy: {str(e)}")
     
-    def _find_best_match(self, scraped_name: str, taxonomy_map: Dict[str, str], threshold: float = 0.8) -> Optional[str]:
+    def _find_best_match(self, scraped_name: str, taxonomy_map: Dict[str, str], threshold: float = 0.6) -> Optional[str]:
         """Find best matching taxonomy item using fuzzy string matching"""
         scraped_name = scraped_name.lower().strip()
         
@@ -61,7 +61,76 @@ class TaxonomyService:
         if scraped_name in taxonomy_map:
             return taxonomy_map[scraped_name]
         
-        # Try fuzzy matching
+        # Try partial matches and common variations
+        category_mappings = {
+            'ai': 'natural language processing',
+            'chatbots': 'natural language processing', 
+            'language models': 'natural language processing',
+            'nlp': 'natural language processing',
+            'computer vision': 'computer vision',
+            'image': 'computer vision',
+            'vision': 'computer vision',
+            'data science': 'data science & analytics',
+            'analytics': 'data science & analytics',
+            'data analysis': 'data science & analytics',
+            'machine learning': 'machine learning platforms',
+            'ml': 'machine learning platforms',
+            'developer': 'developer tools',
+            'development': 'developer tools',
+            'coding': 'developer tools',
+            'infrastructure': 'ai infrastructure',
+            'robotics': 'robotics & automation',
+            'automation': 'robotics & automation',
+            'education': 'ai education & learning',
+            'learning': 'ai education & learning',
+            'ethics': 'ai ethics & governance'
+        }
+        
+        tag_mappings = {
+            'ai chatbot': 'free tier',  # Map to available tags
+            'language generation': 'api access',
+            'code assistance': 'api access',
+            'data analysis': 'data visualization',
+            'free': 'free tier',
+            'api': 'api access',
+            'cloud': 'cloud-based',
+            'beginner': 'beginner-friendly'
+        }
+        
+        feature_mappings = {
+            'generates human-like text responses': 'gui interface',
+            'summarizes meetings and documents': 'detailed documentation',
+            'assists with code generation and debugging': 'cli tool',
+            'supports real-time voice conversations': 'active community support',
+            'analyzes images and data': 'detailed documentation',
+            'creates images from text descriptions': 'gui interface',
+            'deep research capabilities': 'detailed documentation',
+            'mobile file uploads': 'gui interface',
+            'tone and formatting preferences': 'gui interface',
+            'free trial': 'free trial available',
+            'trial': 'free trial available',
+            'documentation': 'detailed documentation',
+            'community': 'active community support',
+            'gui': 'gui interface',
+            'command line': 'cli tool',
+            'cli': 'cli tool'
+        }
+        
+        # Choose the right mapping based on taxonomy type
+        if 'categories' in str(taxonomy_map):
+            mappings = category_mappings
+        elif 'tags' in str(taxonomy_map):
+            mappings = tag_mappings  
+        else:
+            mappings = feature_mappings
+            
+        # Check for keyword matches
+        for keyword, mapped_value in mappings.items():
+            if keyword in scraped_name:
+                if mapped_value in taxonomy_map:
+                    return taxonomy_map[mapped_value]
+        
+        # Try fuzzy matching as fallback
         best_match = None
         best_score = 0
         
