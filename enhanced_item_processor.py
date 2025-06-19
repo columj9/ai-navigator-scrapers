@@ -150,7 +150,7 @@ class EnhancedItemProcessor:
             "funding_stage": self._normalize_funding_stage(company_info.get('funding_stage')),
             "location_summary": company_info.get('location_summary'),
             "ref_link": actual_website_url,  # Use actual URL for ref_link too
-            "affiliate_status": "NONE",
+            "affiliate_status": "NONE",  # Fixed: use NONE instead of PENDING
             "status": "ACTIVE",
             "scraped_review_sentiment_label": None,  # V1 - skip sentiment analysis
             "scraped_review_sentiment_score": None,
