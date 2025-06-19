@@ -99,7 +99,7 @@ class EnhancedItemProcessor:
                 "has_free_tier": enriched_data.get('has_free_tier', False),
                 "use_cases": enriched_data.get('use_cases', []),
                 "pricing_model": self._normalize_pricing_model(enriched_data.get('pricing_model', 'FREEMIUM')),
-                "price_range": enriched_data.get('price_range', 'MEDIUM'),
+                "price_range": self._normalize_price_range(enriched_data.get('price_range', 'MEDIUM')),
                 "pricing_details": enriched_data.get('pricing_details'),
                 "pricing_url": website_data.get('pricing_url'),
                 "integrations": enriched_data.get('integrations', []),
