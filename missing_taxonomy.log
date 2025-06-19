@@ -293,3 +293,69 @@
 {"type": "feature", "name": "Comprehensive recommendations across UX, SEO, design, content, performance, and security", "timestamp": "2025-06-19 05:59:51.605759"}
 {"type": "feature", "name": "Actionable and prioritized suggestions", "timestamp": "2025-06-19 05:59:51.606215"}
 {"type": "feature", "name": "No extensive technical knowledge required", "timestamp": "2025-06-19 05:59:51.606956"}
+{"type": "category", "name": "AI", "timestamp": "2025-06-19 06:01:41.288757"}
+{"type": "category", "name": "Web analysis", "timestamp": "2025-06-19 06:01:41.289846"}
+{"type": "category", "name": "SEO", "timestamp": "2025-06-19 06:01:41.290654"}
+{"type": "category", "name": "UX", "timestamp": "2025-06-19 06:01:41.291301"}
+{"type": "tag", "name": "AI marketing", "timestamp": "2025-06-19 06:01:41.292109"}
+{"type": "tag", "name": "Website optimization", "timestamp": "2025-06-19 06:01:41.293017"}
+{"type": "tag", "name": "SEO tool", "timestamp": "2025-06-19 06:01:41.293655"}
+{"type": "tag", "name": "UX analysis", "timestamp": "2025-06-19 06:01:41.294511"}
+{"type": "feature", "name": "AI-powered analysis", "timestamp": "2025-06-19 06:01:41.295211"}
+{"type": "feature", "name": "Comprehensive recommendations across UX, SEO, design, content, performance, and security", "timestamp": "2025-06-19 06:01:41.296478"}
+{"type": "feature", "name": "Actionable and prioritized suggestions", "timestamp": "2025-06-19 06:01:41.297270"}
+{"type": "feature", "name": "No extensive technical knowledge required", "timestamp": "2025-06-19 06:01:41.298482"}
+{"type": "category", "name": "AI", "timestamp": "2025-06-19 06:01:52.768017"}
+{"type": "category", "name": "Document Management", "timestamp": "2025-06-19 06:01:52.768590"}
+{"type": "tag", "name": "AI-powered", "timestamp": "2025-06-19 06:01:52.768960"}
+{"type": "tag", "name": "PDF form filler", "timestamp": "2025-06-19 06:01:52.769407"}
+{"type": "tag", "name": "Batch processing", "timestamp": "2025-06-19 06:01:52.777762"}
+{"type": "tag", "name": "Custom profiles", "timestamp": "2025-06-19 06:01:52.778454"}
+{"type": "feature", "name": "Smart AI Form Filling: Extracts data from documents and images to automatically populate PDF forms", "timestamp": "2025-06-19 06:01:52.780028"}
+{"type": "feature", "name": "Batch Filling & CSV Import: Fill out lots of forms at once using data from CSV files", "timestamp": "2025-06-19 06:01:52.781213"}
+{"type": "feature", "name": "Custom Profile Management: Create and save different profiles for easy reuse", "timestamp": "2025-06-19 06:01:52.782201"}
+{"type": "feature", "name": "Optical Character Recognition (OCR): Pulls data from images, text files, and partially filled PDFs", "timestamp": "2025-06-19 06:01:52.785099"}
+{"type": "feature", "name": "Advanced Validation Checks: Ensures compliance with rules for specific forms like I-9s", "timestamp": "2025-06-19 06:01:52.786174"}
+{"type": "category", "name": "AI-powered tools", "timestamp": "2025-06-19 06:02:03.899864"}
+{"type": "category", "name": "Collaboration software", "timestamp": "2025-06-19 06:02:03.900465"}
+{"type": "tag", "name": "AI assistant", "timestamp": "2025-06-19 06:02:03.900916"}
+{"type": "tag", "name": "Code editor", "timestamp": "2025-06-19 06:02:03.901343"}
+{"type": "tag", "name": "Collaboration tool", "timestamp": "2025-06-19 06:02:03.901851"}
+{"type": "tag", "name": "Terminal software", "timestamp": "2025-06-19 06:02:03.902527"}
+{"type": "feature", "name": "AI Command Suggestions", "timestamp": "2025-06-19 06:02:03.903037"}
+{"type": "feature", "name": "Chat with Warp AI", "timestamp": "2025-06-19 06:02:03.903462"}
+{"type": "feature", "name": "AI autofill in Warp Drive", "timestamp": "2025-06-19 06:02:03.903947"}
+{"type": "feature", "name": "Prompt Suggestions", "timestamp": "2025-06-19 06:02:03.904370"}
+{"type": "feature", "name": "Next Command", "timestamp": "2025-06-19 06:02:03.904756"}
+{"type": "feature", "name": "Workflows", "timestamp": "2025-06-19 06:02:03.905072"}
+{"type": "feature", "name": "Notebooks", "timestamp": "2025-06-19 06:02:03.905407"}
+{"type": "feature", "name": "Personal Drive", "timestamp": "2025-06-19 06:02:03.905794"}
+{"type": "feature", "name": "Environment Variables", "timestamp": "2025-06-19 06:02:03.906281"}
+{"type": "feature", "name": "Warp Drive on the Web", "timestamp": "2025-06-19 06:02:03.906722"}
+{"type": "feature", "name": "Team Drive", "timestamp": "2025-06-19 06:02:03.907074"}
+{"type": "feature", "name": "Session Sharing", "timestamp": "2025-06-19 06:02:03.907475"}
+{"type": "feature", "name": "Block Sharing", "timestamp": "2025-06-19 06:02:03.907854"}
+{"type": "feature", "name": "Agent Mode", "timestamp": "2025-06-19 06:02:03.908261"}
+{"type": "feature", "name": "Warp Pair", "timestamp": "2025-06-19 06:02:03.908597"}
+{"type": "feature", "name": "Warp Dispatch", "timestamp": "2025-06-19 06:02:03.908977"}
+{"type": "category", "name": "AI", "timestamp": "2025-06-19 06:02:16.376261"}
+{"type": "category", "name": "Text-to-Speech", "timestamp": "2025-06-19 06:02:16.377031"}
+{"type": "category", "name": "Voice Cloning", "timestamp": "2025-06-19 06:02:16.377889"}
+{"type": "tag", "name": "AI Tools", "timestamp": "2025-06-19 06:02:16.378718"}
+{"type": "tag", "name": "Voice Synthesis", "timestamp": "2025-06-19 06:02:16.379450"}
+{"type": "tag", "name": "Content Creation", "timestamp": "2025-06-19 06:02:16.380760"}
+{"type": "feature", "name": "API access to 200+ voices", "timestamp": "2025-06-19 06:02:16.381509"}
+{"type": "feature", "name": "Sub 200ms latency", "timestamp": "2025-06-19 06:02:16.382283"}
+{"type": "feature", "name": "Professional voice cloning", "timestamp": "2025-06-19 06:02:16.382759"}
+{"type": "feature", "name": "Custom SLAs for enterprise needs", "timestamp": "2025-06-19 06:02:16.383232"}
+{"type": "feature", "name": "VPC and on-prem options", "timestamp": "2025-06-19 06:02:16.383569"}
+{"type": "category", "name": "Marketing", "timestamp": "2025-06-19 06:02:26.990769"}
+{"type": "category", "name": "Digital Content Management", "timestamp": "2025-06-19 06:02:26.991428"}
+{"type": "tag", "name": "QR Code Generation", "timestamp": "2025-06-19 06:02:26.991947"}
+{"type": "tag", "name": "Customization", "timestamp": "2025-06-19 06:02:26.992363"}
+{"type": "tag", "name": "Dynamic Content", "timestamp": "2025-06-19 06:02:26.996960"}
+{"type": "tag", "name": "Business Marketing", "timestamp": "2025-06-19 06:02:26.997507"}
+{"type": "feature", "name": "Customizable QR code generation", "timestamp": "2025-06-19 06:02:26.998002"}
+{"type": "feature", "name": "Multi-content management (menus, promotions, ratings, etc.)", "timestamp": "2025-06-19 06:02:26.998654"}
+{"type": "feature", "name": "Dynamic content updates without generating new QR codes", "timestamp": "2025-06-19 06:02:26.999334"}
+{"type": "feature", "name": "Total customization with corporate image integration (logo, colors, etc.)", "timestamp": "2025-06-19 06:02:27.001914"}

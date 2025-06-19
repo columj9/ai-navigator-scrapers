@@ -1493,3 +1493,438 @@ SyntaxError: invalid syntax
     ]
   }
 }
+2025-06-19 06:01:34,054 - ai_navigator_client - INFO - Successfully refreshed AI Navigator API token
+2025-06-19 06:01:34,176 - taxonomy_service - INFO - Loaded 9 categories
+2025-06-19 06:01:34,292 - taxonomy_service - INFO - Loaded 15 tags
+2025-06-19 06:01:34,417 - taxonomy_service - INFO - Loaded 8 features
+2025-06-19 06:01:34,650 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/webgremlin-ai → https://webgremlin.ai/?ref=futuretools.io
+2025-06-19 06:01:34,651 - enhanced_item_processor - INFO - Processing lead: Web Gremlin from futuretools.io
+2025-06-19 06:01:39,348 - data_enrichment_service - INFO - Successfully enriched data for Web Gremlin
+2025-06-19 06:01:41,288 - taxonomy_service - WARNING - Could not map category: 'AI'
+2025-06-19 06:01:41,289 - taxonomy_service - WARNING - Could not map category: 'Web analysis'
+2025-06-19 06:01:41,290 - taxonomy_service - WARNING - Could not map category: 'SEO'
+2025-06-19 06:01:41,290 - taxonomy_service - WARNING - Could not map category: 'UX'
+2025-06-19 06:01:41,291 - taxonomy_service - WARNING - Could not map tag: 'AI marketing'
+2025-06-19 06:01:41,292 - taxonomy_service - WARNING - Could not map tag: 'Website optimization'
+2025-06-19 06:01:41,293 - taxonomy_service - WARNING - Could not map tag: 'SEO tool'
+2025-06-19 06:01:41,294 - taxonomy_service - WARNING - Could not map tag: 'UX analysis'
+2025-06-19 06:01:41,294 - taxonomy_service - WARNING - Could not map feature: 'AI-powered analysis'
+2025-06-19 06:01:41,296 - taxonomy_service - WARNING - Could not map feature: 'Comprehensive recommendations across UX, SEO, design, content, performance, and security'
+2025-06-19 06:01:41,296 - taxonomy_service - WARNING - Could not map feature: 'Actionable and prioritized suggestions'
+2025-06-19 06:01:41,298 - taxonomy_service - WARNING - Could not map feature: 'No extensive technical knowledge required'
+2025-06-19 06:01:41,298 - enhanced_item_processor - INFO - Successfully processed lead for Web Gremlin
+2025-06-19 06:01:41,481 - ai_navigator_client - ERROR - Failed to create entity: 409 - {"statusCode":409,"message":"A record with this 'name' already exists.","error":"DatabaseError","details":{"fields":["name"],"reason":"unique_constraint_failed"},"timestamp":"2025-06-19T06:01:41.467Z","path":"/entities"}
+2025-06-19 06:01:41,483 - ai_navigator_client - ERROR - Entity data: {
+  "name": "Web Gremlin",
+  "website_url": "https://webgremlin.ai/?ref=futuretools.io",
+  "entity_type_id": "e35dea27-b628-40fc-99c5-e09ae63fb135",
+  "short_description": "AI-powered website analysis and optimization tool that provides comprehensive recommendations across user experience, SEO, design, content, performance, and security.",
+  "description": "Web Gremlin is an AI-powered website analysis and optimization tool that scans sites to provide comprehensive recommendations across user experience, SEO, design, content, performance, and security. It delivers actionable, prioritized suggestions that help businesses, marketers, and website owners systematically improve their online presence through a single unified platform. The tool evaluates various aspects of a website, including design, user experience (UX), search engine optimization (SEO), branding, security, and performance. It also comprehends your site's content to identify gaps. Web Gremlin provides a roadmap to fix identified issues, highlighting strengths and weaknesses. This tool is designed to be user-friendly, requiring no extensive technical knowledge to use. It is commonly used by digital marketers, technology officers, and business owners seeking enhanced web optimization and improved user engagement.",
+  "category_ids": [
+    "d635d8b6-3fda-43b3-83c7-f4887d3e03f7"
+  ],
+  "feature_ids": [
+    "a4914c5d-6b48-43f8-92a4-f77b66f34ce3"
+  ],
+  "meta_title": "Web Gremlin | AI Navigator",
+  "meta_description": "AI-powered website analysis and optimization tool that provides comprehensive recommendations across user experience, SEO, design, content, performance, and sec",
+  "ref_link": "https://webgremlin.ai/?ref=futuretools.io",
+  "affiliate_status": "NONE",
+  "status": "ACTIVE",
+  "tool_details": {
+    "learning_curve": "MEDIUM",
+    "key_features": [
+      "AI-powered analysis",
+      "Comprehensive recommendations across UX, SEO, design, content, performance, and security",
+      "Actionable and prioritized suggestions",
+      "User-friendly interface",
+      "No extensive technical knowledge required"
+    ],
+    "has_free_tier": true,
+    "use_cases": [
+      "Analyzing and optimizing website performance",
+      "Improving user experience (UX)",
+      "Enhancing search engine optimization (SEO)",
+      "Identifying content gaps",
+      "Boosting online presence"
+    ],
+    "pricing_model": "SUBSCRIPTION",
+    "price_range": "MEDIUM",
+    "pricing_details": "The pricing details are not explicitly mentioned in the sources. However, it is noted that the tool offers a free trial.",
+    "has_live_chat": false,
+    "target_audience": [
+      "Digital marketers",
+      "Technology officers",
+      "Business owners"
+    ],
+    "mobile_support": false,
+    "api_access": false,
+    "customization_level": "Medium",
+    "trial_available": true,
+    "demo_available": false,
+    "open_source": false,
+    "support_channels": [
+      "Email",
+      "Documentation"
+    ]
+  }
+}
+2025-06-19 06:01:44,814 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/instafill-ai → https://instafill.ai/?ref=futuretools.io
+2025-06-19 06:01:44,814 - enhanced_item_processor - INFO - Processing lead: Instafill from futuretools.io
+2025-06-19 06:01:50,088 - data_enrichment_service - INFO - Successfully enriched data for Instafill
+2025-06-19 06:01:52,767 - taxonomy_service - WARNING - Could not map category: 'AI'
+2025-06-19 06:01:52,768 - taxonomy_service - WARNING - Could not map category: 'Document Management'
+2025-06-19 06:01:52,768 - taxonomy_service - WARNING - Could not map tag: 'AI-powered'
+2025-06-19 06:01:52,769 - taxonomy_service - WARNING - Could not map tag: 'PDF form filler'
+2025-06-19 06:01:52,777 - taxonomy_service - WARNING - Could not map tag: 'Batch processing'
+2025-06-19 06:01:52,778 - taxonomy_service - WARNING - Could not map tag: 'Custom profiles'
+2025-06-19 06:01:52,779 - taxonomy_service - WARNING - Could not map feature: 'Smart AI Form Filling: Extracts data from documents and images to automatically populate PDF forms'
+2025-06-19 06:01:52,780 - taxonomy_service - WARNING - Could not map feature: 'Batch Filling & CSV Import: Fill out lots of forms at once using data from CSV files'
+2025-06-19 06:01:52,782 - taxonomy_service - WARNING - Could not map feature: 'Custom Profile Management: Create and save different profiles for easy reuse'
+2025-06-19 06:01:52,783 - taxonomy_service - WARNING - Could not map feature: 'Optical Character Recognition (OCR): Pulls data from images, text files, and partially filled PDFs'
+2025-06-19 06:01:52,785 - taxonomy_service - WARNING - Could not map feature: 'Advanced Validation Checks: Ensures compliance with rules for specific forms like I-9s'
+2025-06-19 06:01:52,786 - enhanced_item_processor - INFO - Successfully processed lead for Instafill
+2025-06-19 06:01:52,966 - ai_navigator_client - ERROR - Failed to create entity: 400 - {"message":["employee_count_range must be one of the following values: C1_10, C11_50, C51_200, C201_500, C501_1000, C1001_5000, C5001_PLUS","funding_stage must be one of the following values: SEED, PRE_SEED, SERIES_A, SERIES_B, SERIES_C, SERIES_D_PLUS, PUBLIC"],"error":"Bad Request","statusCode":400}
+2025-06-19 06:01:52,967 - ai_navigator_client - ERROR - Entity data: {
+  "name": "Instafill",
+  "website_url": "https://instafill.ai/?ref=futuretools.io",
+  "entity_type_id": "e35dea27-b628-40fc-99c5-e09ae63fb135",
+  "short_description": "Instafill.ai is an AI-powered tool that securely and accurately fills out PDF forms by extracting data from documents, images, and CSV files, reducing manual entry time and errors.",
+  "description": "Instafill.ai uses advanced AI technology to automatically fill out PDF forms with 100% accuracy. It supports various file formats including CSV, Excel (.xls and .xlsx), and Tab-Separated Values (.tsv). The tool can also handle free-form text input to provide context and clarify ambiguous data. It is particularly useful for businesses and individuals who need to fill out multiple forms at once, offering features like batch filling, custom profile management, and optical character recognition (OCR). Instafill.ai enhances accuracy by validating entries against a robust knowledge base and ensures compliance with rules for specific forms like I-9s. It also supports color-coded tracking to show what fields are left to fill and follows security standards such as ISO 27001, HIPAA, and GDPR to keep data safe.",
+  "logo_url": "https://cplst01.blob.core.windows.net/static/instafill_dark.png",
+  "documentation_url": "https://docs.instafill.ai",
+  "contact_url": "https://share.hsforms.com/1agXpOWRdQN-evAZMzMH1rQr7fxo",
+  "privacy_policy_url": "https://instafill.ai/home/privacy",
+  "founded_year": 2024,
+  "social_links": {
+    "linkedin": "www.linkedin.com/company/instafill"
+  },
+  "category_ids": [
+    "d635d8b6-3fda-43b3-83c7-f4887d3e03f7"
+  ],
+  "meta_title": "Instafill | AI Navigator",
+  "meta_description": "Instafill.ai is an AI-powered tool that securely and accurately fills out PDF forms by extracting data from documents, images, and CSV files, reducing manual en",
+  "employee_count_range": "1-10",
+  "funding_stage": "Unknown",
+  "location_summary": "Claymont, US",
+  "ref_link": "https://instafill.ai/?ref=futuretools.io",
+  "affiliate_status": "NONE",
+  "status": "ACTIVE",
+  "tool_details": {
+    "learning_curve": "MEDIUM",
+    "key_features": [
+      "Smart AI Form Filling: Extracts data from documents and images to automatically populate PDF forms",
+      "Batch Filling & CSV Import: Fill out lots of forms at once using data from CSV files",
+      "Custom Profile Management: Create and save different profiles for easy reuse",
+      "Optical Character Recognition (OCR): Pulls data from images, text files, and partially filled PDFs",
+      "Advanced Validation Checks: Ensures compliance with rules for specific forms like I-9s"
+    ],
+    "has_free_tier": false,
+    "use_cases": [
+      "Businesses needing to fill out multiple forms at once",
+      "Individuals requiring accurate and efficient form filling",
+      "Administrative tasks in large corporations",
+      "Daily data entry tasks"
+    ],
+    "pricing_model": "SUBSCRIPTION",
+    "price_range": "MEDIUM",
+    "pricing_details": "Contact sales for specific pricing details",
+    "pricing_url": "https://instafill.ai/pricing",
+    "has_live_chat": false,
+    "target_audience": [
+      "Businesses",
+      "Administrative staff",
+      "Individuals"
+    ],
+    "mobile_support": false,
+    "api_access": false,
+    "customization_level": "Medium",
+    "trial_available": false,
+    "demo_available": false,
+    "open_source": false,
+    "support_channels": [
+      "Email",
+      "Documentation"
+    ]
+  }
+}
+2025-06-19 06:01:56,186 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/warp-dev → https://www.warp.dev/?ref=futuretools.io
+2025-06-19 06:01:56,186 - enhanced_item_processor - INFO - Processing lead: Warp Terminal from futuretools.io
+2025-06-19 06:02:01,572 - data_enrichment_service - INFO - Successfully enriched data for Warp Terminal
+2025-06-19 06:02:03,899 - taxonomy_service - WARNING - Could not map category: 'AI-powered tools'
+2025-06-19 06:02:03,900 - taxonomy_service - WARNING - Could not map category: 'Collaboration software'
+2025-06-19 06:02:03,900 - taxonomy_service - WARNING - Could not map tag: 'AI assistant'
+2025-06-19 06:02:03,901 - taxonomy_service - WARNING - Could not map tag: 'Code editor'
+2025-06-19 06:02:03,901 - taxonomy_service - WARNING - Could not map tag: 'Collaboration tool'
+2025-06-19 06:02:03,902 - taxonomy_service - WARNING - Could not map tag: 'Terminal software'
+2025-06-19 06:02:03,902 - taxonomy_service - WARNING - Could not map feature: 'AI Command Suggestions'
+2025-06-19 06:02:03,903 - taxonomy_service - WARNING - Could not map feature: 'Chat with Warp AI'
+2025-06-19 06:02:03,903 - taxonomy_service - WARNING - Could not map feature: 'AI autofill in Warp Drive'
+2025-06-19 06:02:03,904 - taxonomy_service - WARNING - Could not map feature: 'Prompt Suggestions'
+2025-06-19 06:02:03,904 - taxonomy_service - WARNING - Could not map feature: 'Next Command'
+2025-06-19 06:02:03,904 - taxonomy_service - WARNING - Could not map feature: 'Workflows'
+2025-06-19 06:02:03,905 - taxonomy_service - WARNING - Could not map feature: 'Notebooks'
+2025-06-19 06:02:03,905 - taxonomy_service - WARNING - Could not map feature: 'Personal Drive'
+2025-06-19 06:02:03,906 - taxonomy_service - WARNING - Could not map feature: 'Environment Variables'
+2025-06-19 06:02:03,906 - taxonomy_service - WARNING - Could not map feature: 'Warp Drive on the Web'
+2025-06-19 06:02:03,906 - taxonomy_service - WARNING - Could not map feature: 'Team Drive'
+2025-06-19 06:02:03,907 - taxonomy_service - WARNING - Could not map feature: 'Session Sharing'
+2025-06-19 06:02:03,907 - taxonomy_service - WARNING - Could not map feature: 'Block Sharing'
+2025-06-19 06:02:03,908 - taxonomy_service - WARNING - Could not map feature: 'Agent Mode'
+2025-06-19 06:02:03,908 - taxonomy_service - WARNING - Could not map feature: 'Warp Pair'
+2025-06-19 06:02:03,908 - taxonomy_service - WARNING - Could not map feature: 'Warp Dispatch'
+2025-06-19 06:02:03,909 - enhanced_item_processor - INFO - Successfully processed lead for Warp Terminal
+2025-06-19 06:02:04,080 - ai_navigator_client - ERROR - Failed to create entity: 400 - {"message":["funding_stage must be one of the following values: SEED, PRE_SEED, SERIES_A, SERIES_B, SERIES_C, SERIES_D_PLUS, PUBLIC"],"error":"Bad Request","statusCode":400}
+2025-06-19 06:02:04,080 - ai_navigator_client - ERROR - Entity data: {
+  "name": "Warp Terminal",
+  "website_url": "https://www.warp.dev/?ref=futuretools.io",
+  "entity_type_id": "e35dea27-b628-40fc-99c5-e09ae63fb135",
+  "short_description": "A modern terminal that integrates AI to boost productivity and facilitate team collaboration.",
+  "description": "Warp Terminal is an all-in-one solution for development needs, functioning as a code editor, AI assistant, collaboration tool, document viewer, and more. It leverages AI to provide smart tips for commands, auto-complete commands, and offer contextual suggestions. The tool includes features like Agent Mode for debugging, Warp Pair for collaborative coding, and Warp Dispatch for autonomous code generation and testing. It also supports the organization and tracking of commands, customization options, and real-time session sharing for team collaboration.",
+  "logo_url": "https://leading-bell-3e1c02e64d.media.strapiapp.com/logo_ramp_091858345f.svg",
+  "documentation_url": "https://docs.warp.dev/getting-started/readme",
+  "contact_url": "https://www.warp.dev/contact",
+  "privacy_policy_url": "https://www.warp.dev/privacy",
+  "founded_year": 2020,
+  "social_links": {
+    "twitter": "warpdotdev",
+    "linkedin": "warpdotdev"
+  },
+  "category_ids": [
+    "a62f7509-fa36-4848-b98e-a229ed98805b"
+  ],
+  "meta_title": "Warp Terminal | AI Navigator",
+  "meta_description": "A modern terminal that integrates AI to boost productivity and facilitate team collaboration.",
+  "funding_stage": "Series B",
+  "location_summary": "New York City, United States",
+  "ref_link": "https://www.warp.dev/?ref=futuretools.io",
+  "affiliate_status": "NONE",
+  "status": "ACTIVE",
+  "tool_details": {
+    "learning_curve": "MEDIUM",
+    "key_features": [
+      "AI Command Suggestions",
+      "Chat with Warp AI",
+      "AI autofill in Warp Drive",
+      "Prompt Suggestions",
+      "Next Command",
+      "Workflows",
+      "Notebooks",
+      "Personal Drive",
+      "Environment Variables",
+      "Warp Drive on the Web",
+      "Team Drive",
+      "Session Sharing",
+      "Block Sharing",
+      "Agent Mode",
+      "Warp Pair",
+      "Warp Dispatch"
+    ],
+    "has_free_tier": false,
+    "use_cases": [
+      "Code editing and generation",
+      "Debugging and issue resolution",
+      "Collaborative coding",
+      "Team project management",
+      "Real-time session sharing",
+      "Command organization and tracking"
+    ],
+    "pricing_model": "SUBSCRIPTION",
+    "price_range": "MEDIUM",
+    "pricing_details": "Warp offers a subscription-based model with pricing details available on their website. The exact pricing is not publicly disclosed in the sources provided.",
+    "pricing_url": "https://www.warp.dev/pricing",
+    "has_live_chat": false,
+    "community_url": "https://discord.com/invite/warpdotdev",
+    "target_audience": [
+      "Developers",
+      "Teams and organizations",
+      "Data scientists"
+    ],
+    "mobile_support": false,
+    "api_access": false,
+    "customization_level": "Medium",
+    "trial_available": false,
+    "demo_available": false,
+    "open_source": false,
+    "support_channels": [
+      "Email",
+      "Documentation"
+    ]
+  }
+}
+2025-06-19 06:02:07,296 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/rime-ai → https://www.rime.ai/?ref=futuretools.io
+2025-06-19 06:02:07,296 - enhanced_item_processor - INFO - Processing lead: Rime AI from futuretools.io
+2025-06-19 06:02:13,226 - data_enrichment_service - INFO - Successfully enriched data for Rime AI
+2025-06-19 06:02:16,375 - taxonomy_service - WARNING - Could not map category: 'AI'
+2025-06-19 06:02:16,376 - taxonomy_service - WARNING - Could not map category: 'Text-to-Speech'
+2025-06-19 06:02:16,377 - taxonomy_service - WARNING - Could not map category: 'Voice Cloning'
+2025-06-19 06:02:16,378 - taxonomy_service - WARNING - Could not map tag: 'AI Tools'
+2025-06-19 06:02:16,379 - taxonomy_service - WARNING - Could not map tag: 'Voice Synthesis'
+2025-06-19 06:02:16,380 - taxonomy_service - WARNING - Could not map tag: 'Content Creation'
+2025-06-19 06:02:16,381 - taxonomy_service - WARNING - Could not map feature: 'API access to 200+ voices'
+2025-06-19 06:02:16,381 - taxonomy_service - WARNING - Could not map feature: 'Sub 200ms latency'
+2025-06-19 06:02:16,382 - taxonomy_service - WARNING - Could not map feature: 'Professional voice cloning'
+2025-06-19 06:02:16,383 - taxonomy_service - WARNING - Could not map feature: 'Custom SLAs for enterprise needs'
+2025-06-19 06:02:16,383 - taxonomy_service - WARNING - Could not map feature: 'VPC and on-prem options'
+2025-06-19 06:02:16,383 - enhanced_item_processor - INFO - Successfully processed lead for Rime AI
+2025-06-19 06:02:16,542 - ai_navigator_client - ERROR - Failed to create entity: 400 - {"message":["employee_count_range must be one of the following values: C1_10, C11_50, C51_200, C201_500, C501_1000, C1001_5000, C5001_PLUS","funding_stage must be one of the following values: SEED, PRE_SEED, SERIES_A, SERIES_B, SERIES_C, SERIES_D_PLUS, PUBLIC"],"error":"Bad Request","statusCode":400}
+2025-06-19 06:02:16,543 - ai_navigator_client - ERROR - Entity data: {
+  "name": "Rime AI",
+  "website_url": "https://www.rime.ai/?ref=futuretools.io",
+  "entity_type_id": "e35dea27-b628-40fc-99c5-e09ae63fb135",
+  "short_description": "Rime AI offers advanced text-to-speech and voice cloning capabilities, providing high-quality voice synthesis and customization options.",
+  "description": "Rime AI is an AI tool that specializes in text-to-speech and voice cloning. It provides users with a wide range of voices and customization options, making it suitable for various applications including content creation, customer service, and more. The platform offers different pricing tiers to cater to different needs, from individual developers to large enterprises. Key features include API access to over 200 voices, sub-200ms latency, and professional voice cloning. Rime AI is particularly beneficial for enterprises, creators, and startups looking to enhance their audio content with high-quality voices.",
+  "logo_url": "https://www.rime.ai/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fconverse-logo.af83c79d.png&w=256&q=75&dpl=dpl_Bvfadd7zJmpaJgo56w5CPPX71WHg",
+  "documentation_url": "https://docs.rime.ai/api-reference/quickstart",
+  "privacy_policy_url": "https://www.rime.ai/privacy/",
+  "founded_year": 2022,
+  "category_ids": [
+    "d635d8b6-3fda-43b3-83c7-f4887d3e03f7"
+  ],
+  "meta_title": "Rime AI | AI Navigator",
+  "meta_description": "Rime AI offers advanced text-to-speech and voice cloning capabilities, providing high-quality voice synthesis and customization options.",
+  "employee_count_range": "1-10",
+  "funding_stage": "Unknown",
+  "location_summary": "San Francisco, USA",
+  "ref_link": "https://www.rime.ai/?ref=futuretools.io",
+  "affiliate_status": "NONE",
+  "status": "ACTIVE",
+  "tool_details": {
+    "learning_curve": "MEDIUM",
+    "key_features": [
+      "API access to 200+ voices",
+      "Sub 200ms latency",
+      "Professional voice cloning",
+      "Custom SLAs for enterprise needs",
+      "VPC and on-prem options"
+    ],
+    "has_free_tier": true,
+    "use_cases": [
+      "Content creation",
+      "Customer service",
+      "Audio content production",
+      "Enterprise communication",
+      "Startups and early-stage projects"
+    ],
+    "pricing_model": "SUBSCRIPTION",
+    "price_range": "LOW",
+    "pricing_details": {
+      "Free": {
+        "characters": "up to 10k",
+        "latency": "sub 200ms"
+      },
+      "Starter": {
+        "characters": "up to 100k",
+        "additional_characters": "$65/million"
+      },
+      "Developer": {
+        "characters": "up to 500k",
+        "additional_characters": "$60/million"
+      },
+      "Pro": {
+        "characters": "up to 3 million",
+        "additional_characters": "$50/million"
+      },
+      "Business": {
+        "characters": "up to 10 million",
+        "additional_characters": "$40/million",
+        "professional_voice_cloning": true
+      },
+      "Enterprise": {
+        "custom_pricing": true,
+        "unlimited_usage": true,
+        "vpc_and_on_prem_options": true,
+        "professional_voice_cloning": true,
+        "custom_slas": true
+      }
+    },
+    "pricing_url": "https://www.rime.ai/pricing/",
+    "has_live_chat": false,
+    "community_url": "https://join.slack.com/t/rimehelpdesk/shared_invite/zt-1s49vizx3-s9FcTTCONbmuj~BudhcsfQ",
+    "target_audience": [
+      "Enterprises",
+      "Creators",
+      "Startups"
+    ],
+    "mobile_support": false,
+    "api_access": true,
+    "customization_level": "Medium",
+    "trial_available": true,
+    "demo_available": false,
+    "open_source": false,
+    "support_channels": [
+      "Email",
+      "Documentation"
+    ]
+  }
+}
+2025-06-19 06:02:19,856 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/qroctopus-com → https://www.qroctopus.com/?ref=futuretools.io
+2025-06-19 06:02:19,858 - enhanced_item_processor - INFO - Processing lead: QR Octopus from futuretools.io
+2025-06-19 06:02:24,857 - data_enrichment_service - INFO - Successfully enriched data for QR Octopus
+2025-06-19 06:02:26,990 - taxonomy_service - WARNING - Could not map category: 'Marketing'
+2025-06-19 06:02:26,991 - taxonomy_service - WARNING - Could not map category: 'Digital Content Management'
+2025-06-19 06:02:26,991 - taxonomy_service - WARNING - Could not map tag: 'QR Code Generation'
+2025-06-19 06:02:26,992 - taxonomy_service - WARNING - Could not map tag: 'Customization'
+2025-06-19 06:02:26,996 - taxonomy_service - WARNING - Could not map tag: 'Dynamic Content'
+2025-06-19 06:02:26,997 - taxonomy_service - WARNING - Could not map tag: 'Business Marketing'
+2025-06-19 06:02:26,997 - taxonomy_service - WARNING - Could not map feature: 'Customizable QR code generation'
+2025-06-19 06:02:26,998 - taxonomy_service - WARNING - Could not map feature: 'Multi-content management (menus, promotions, ratings, etc.)'
+2025-06-19 06:02:26,999 - taxonomy_service - WARNING - Could not map feature: 'Dynamic content updates without generating new QR codes'
+2025-06-19 06:02:27,001 - taxonomy_service - WARNING - Could not map feature: 'Total customization with corporate image integration (logo, colors, etc.)'
+2025-06-19 06:02:27,002 - enhanced_item_processor - INFO - Successfully processed lead for QR Octopus
+2025-06-19 06:02:27,186 - ai_navigator_client - ERROR - Failed to create entity: 409 - {"statusCode":409,"message":"A record with this 'name' already exists.","error":"DatabaseError","details":{"fields":["name"],"reason":"unique_constraint_failed"},"timestamp":"2025-06-19T06:02:27.173Z","path":"/entities"}
+2025-06-19 06:02:27,187 - ai_navigator_client - ERROR - Entity data: {
+  "name": "QR Octopus",
+  "website_url": "https://www.qroctopus.com/?ref=futuretools.io",
+  "entity_type_id": "e35dea27-b628-40fc-99c5-e09ae63fb135",
+  "short_description": "A versatile QR code generation tool for various applications, including business marketing and digital content management.",
+  "description": "QR Octopus is a tool designed to create customized QR codes for diverse applications. It allows users to quickly generate QR codes that can be used for business marketing, digital content management, and other purposes. The tool likely offers features such as customization options, multi-content management, and dynamic content updates. It is intended to streamline the process of creating and managing QR codes, enhancing user experience and efficiency.",
+  "category_ids": [
+    "d635d8b6-3fda-43b3-83c7-f4887d3e03f7"
+  ],
+  "feature_ids": [
+    "31a0aa87-bde0-4086-aaae-4dd861458a68"
+  ],
+  "meta_title": "QR Octopus | AI Navigator",
+  "meta_description": "A versatile QR code generation tool for various applications, including business marketing and digital content management.",
+  "ref_link": "https://www.qroctopus.com/?ref=futuretools.io",
+  "affiliate_status": "NONE",
+  "status": "ACTIVE",
+  "tool_details": {
+    "learning_curve": "MEDIUM",
+    "key_features": [
+      "Customizable QR code generation",
+      "Multi-content management (menus, promotions, ratings, etc.)",
+      "Dynamic content updates without generating new QR codes",
+      "Total customization with corporate image integration (logo, colors, etc.)",
+      "Easy QR code generation with one-click functionality"
+    ],
+    "has_free_tier": false,
+    "use_cases": [
+      "Business marketing campaigns",
+      "Digital content management in physical spaces",
+      "Menu creation and management in restaurants",
+      "Promotion and discount execution",
+      "Customer database cultivation and personalized marketing"
+    ],
+    "pricing_model": "SUBSCRIPTION",
+    "price_range": "MEDIUM",
+    "pricing_details": "Pricing details not available; likely subscription-based with varying tiers.",
+    "has_live_chat": false,
+    "target_audience": [
+      "Businesses",
+      "Restaurants",
+      "Retailers",
+      "Event organizers"
+    ],
+    "mobile_support": true,
+    "customization_level": "Medium",
+    "trial_available": false,
+    "demo_available": false,
+    "open_source": false,
+    "support_channels": [
+      "Email",
+      "Documentation"
+    ]
+  }
+}
