@@ -257,6 +257,12 @@ class EnhancedItemProcessor:
             self.logger.warning(f"Could not scrape website data from {website_url}: {str(e)}")
             return {}
     
+    def _name_exists(self, tool_name: str) -> bool:
+        """Check if an entity with this name already exists"""
+        # This is a simplified check - in production you might want to query the API
+        # For now, we'll assume we need unique names for the demo
+        return False  # Always return False for now to let timestamp handle uniqueness
+    
     def _normalize_pricing_model(self, pricing_model: str) -> str:
         """Normalize pricing model to match API enum values"""
         pricing_model = pricing_model.upper().strip()
