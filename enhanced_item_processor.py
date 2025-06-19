@@ -86,7 +86,7 @@ class EnhancedItemProcessor:
             "funding_stage": company_info.get('funding_stage'),
             "location_summary": company_info.get('location_summary'),
             "ref_link": website_url,
-            "affiliate_status": "PENDING",
+            "affiliate_status": "NONE",
             "status": "PENDING",
             "scraped_review_sentiment_label": None,  # V1 - skip sentiment analysis
             "scraped_review_sentiment_score": None,
