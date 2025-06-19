@@ -61,24 +61,24 @@ class EnhancedItemProcessor:
         
         self.logger.info(f"Processing lead: {tool_name} from {source_directory}")
         
-        # Check if entity already exists
-        existing_entity = self.client.check_entity_exists(website_url)
+        # Check if entity already exists using the actual website URL
+        existing_entity = self.client.check_entity_exists(actual_website_url)
         if existing_entity:
-            self.logger.info(f"Entity already exists for {website_url}, skipping")
+            self.logger.info(f"Entity already exists for {actual_website_url}, skipping")
             return None
         
-        # Scrape basic info from tool website
-        website_data = self._scrape_website_data(website_url)
+        # Scrape basic info from the actual tool website
+        website_data = self._scrape_website_data(actual_website_url)
         
-        # Enrich data using Perplexity API
+        # Enhanced data enrichment with more context
         enriched_data = self.enrichment_service.enrich_tool_data(
             tool_name, 
-            website_url, 
+            actual_website_url, 
             website_data.get('description', '')
         )
         
-        # Get company information
-        company_info = self.enrichment_service.get_company_info(tool_name, website_url)
+        # Get comprehensive company information
+        company_info = self.enrichment_service.get_company_info(tool_name, actual_website_url)
         
         # Map categories, tags, and features to UUIDs
         category_ids = self.taxonomy_service.map_categories(enriched_data.get('categories', []))
