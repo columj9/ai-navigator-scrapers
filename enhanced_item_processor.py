@@ -17,6 +17,7 @@ class EnhancedItemProcessor:
         self.client = ai_navigator_client
         self.enrichment_service = data_enrichment_service
         self.taxonomy_service = taxonomy_service
+        self.logo_enhancer = LogoEnhancer()  # Initialize enhanced logo service
         self.logger = logging.getLogger(__name__)
     
     def _resolve_redirect_url(self, redirect_url: str) -> str:
