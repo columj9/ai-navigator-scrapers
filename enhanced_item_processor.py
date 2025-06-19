@@ -53,6 +53,12 @@ class EnhancedItemProcessor:
             self.logger.error("Missing required fields: tool_name or website_url")
             return None
         
+        # Resolve redirect URLs to get actual tool websites
+        if 'futuretools.link' in website_url or 'redirect' in website_url:
+            actual_website_url = self._resolve_redirect_url(website_url)
+        else:
+            actual_website_url = website_url
+        
         self.logger.info(f"Processing lead: {tool_name} from {source_directory}")
         
         # Check if entity already exists
