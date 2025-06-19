@@ -215,6 +215,4 @@ class ToolifySpider(scrapy.Spider):
             self.logger.warning(f"Could not find external_website_url for '{item['tool_name_on_directory']}' on {response.url} using provided selectors: {external_url_selectors}")
 
         if not external_url: # To satisfy async generator if no item yielded
-             if False: yield None
-
-</rewritten_file> 
+             if False: yield None 
