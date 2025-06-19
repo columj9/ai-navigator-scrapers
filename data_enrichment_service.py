@@ -60,37 +60,46 @@ class DataEnrichmentService:
             return None
     
     def enrich_tool_data(self, tool_name: str, website_url: str, basic_description: str = "") -> Dict[str, Any]:
-        """Enrich basic tool information with detailed data"""
+        """Enrich basic tool information with comprehensive detailed data"""
         
-        # Create a comprehensive prompt for data enrichment
+        # Create a more comprehensive prompt for maximum data extraction
         prompt = f"""
-        Please provide detailed information about the AI tool "{tool_name}" (website: {website_url}).
+        Please provide comprehensive information about the AI tool "{tool_name}" (website: {website_url}).
         
-        Provide the following information in JSON format:
+        Provide the following information in valid JSON format with maximum detail and accuracy:
         {{
-            "short_description": "Brief 1-2 sentence description",
-            "description": "Detailed description (3-5 sentences)",
-            "key_features": ["feature1", "feature2", "feature3"],
-            "use_cases": ["use case 1", "use case 2", "use case 3"],
-            "pricing_model": "FREE|FREEMIUM|PAID|SUBSCRIPTION",
-            "price_range": "FREE|LOW|MEDIUM|HIGH",
-            "pricing_details": "Specific pricing information if available",
-            "target_audience": ["audience1", "audience2"],
+            "short_description": "Concise 1-2 sentence description highlighting main value proposition",
+            "description": "Detailed 4-6 sentence description covering functionality, benefits, and use cases",
+            "key_features": ["specific feature 1", "specific feature 2", "specific feature 3", "specific feature 4", "specific feature 5"],
+            "use_cases": ["specific use case 1", "specific use case 2", "specific use case 3", "specific use case 4"],
+            "pricing_model": "FREE|FREEMIUM|SUBSCRIPTION|PAY_PER_USE|ONE_TIME_PURCHASE|CONTACT_SALES|OPEN_SOURCE",
+            "price_range": "FREE|LOW|MEDIUM|HIGH|ENTERPRISE",
+            "pricing_details": "Specific pricing information with actual numbers if available",
+            "target_audience": ["specific audience 1", "specific audience 2", "specific audience 3"],
             "categories": ["category1", "category2"],
-            "tags": ["tag1", "tag2", "tag3"],
+            "tags": ["tag1", "tag2", "tag3", "tag4"],
             "has_free_tier": true/false,
             "api_access": true/false,
             "mobile_support": true/false,
-            "integrations": ["integration1", "integration2"],
+            "integrations": ["integration1", "integration2", "integration3"],
             "founded_year": 2023,
             "employee_count_range": "1-10|11-50|51-200|201-500|500+",
-            "funding_stage": "Pre-seed|Seed|Series A|Series B|Series C|Public|Unknown"
+            "funding_stage": "Pre-seed|Seed|Series A|Series B|Series C|Public|Unknown",
+            "trial_available": true/false,
+            "demo_available": true/false,
+            "open_source": true/false,
+            "learning_curve": "LOW|MEDIUM|HIGH",
+            "customization_level": "Low|Medium|High",
+            "supported_languages": ["English", "Spanish", "French"],
+            "platform_compatibility": ["Web", "Windows", "Mac", "Linux", "iOS", "Android"],
+            "industry_focus": ["Healthcare", "Finance", "Marketing", "Education"]
         }}
         
-        Only include information you can verify or that is commonly known. Use "Unknown" or null for uncertain information.
+        Research the tool thoroughly and provide only verified information. Use null for unknown fields.
+        Be as comprehensive and detailed as possible while maintaining accuracy.
         """
         
-        response = self._call_perplexity(prompt, max_tokens=1500)
+        response = self._call_perplexity(prompt, max_tokens=2000)
         
         if response:
             try:
