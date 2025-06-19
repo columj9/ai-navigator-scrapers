@@ -479,29 +479,76 @@ class EnhancedItemProcessor:
     
     def _normalize_funding_stage(self, funding_stage: str) -> Optional[str]:
         """Normalize funding stage to match API enum values"""
-        if not funding_stage or funding_stage.lower() == 'unknown':
+        if not funding_stage or funding_stage.lower() in ['unknown', 'n/a', 'na', '']:
             return None
             
-        funding_stage = funding_stage.upper().strip().replace('-', '_')
+        funding_stage_clean = str(funding_stage).upper().strip().replace('-', '_').replace(' ', '_')
         
-        # Map to valid enum values
+        # Comprehensive mapping for funding stages
         stage_map = {
             'PRE_SEED': 'PRE_SEED',
             'PRESEED': 'PRE_SEED',
+            'PRE SEED': 'PRE_SEED',
             'SEED': 'SEED',
             'SERIES_A': 'SERIES_A',
             'SERIES A': 'SERIES_A',
+            'SERIESA': 'SERIES_A',
+            'A': 'SERIES_A',
             'SERIES_B': 'SERIES_B', 
             'SERIES B': 'SERIES_B',
+            'SERIESB': 'SERIES_B',
+            'B': 'SERIES_B',
             'SERIES_C': 'SERIES_C',
             'SERIES C': 'SERIES_C',
-            'SERIES_D_PLUS': 'SERIES_D_PLUS',
+            'SERIESC': 'SERIES_C',
+            'C': 'SERIES_C',
+            'SERIES_D': 'SERIES_D_PLUS',
             'SERIES D': 'SERIES_D_PLUS',
+            'SERIESD': 'SERIES_D_PLUS',
+            'D': 'SERIES_D_PLUS',
+            'SERIES_D_PLUS': 'SERIES_D_PLUS',
+            'SERIES_E': 'SERIES_D_PLUS',
+            'SERIES E': 'SERIES_D_PLUS',
+            'LATE_STAGE': 'SERIES_D_PLUS',
+            'GROWTH': 'SERIES_D_PLUS',
             'PUBLIC': 'PUBLIC',
-            'UNKNOWN': None
+            'IPO': 'PUBLIC',
+            'PUBLICLY_TRADED': 'PUBLIC',
+            'ACQUIRED': 'PUBLIC',
+            'BOOTSTRAPPED': None,
+            'SELF_FUNDED': None,
+            'STEALTH': 'PRE_SEED',
+            'ANGEL': 'PRE_SEED',
+            'FRIENDS_AND_FAMILY': 'PRE_SEED',
+            'UNKNOWN': None,
+            'NONE': None,
+            'NOT_DISCLOSED': None,
+            'PRIVATE': None
         }
         
-        return stage_map.get(funding_stage)
+        # Check direct mapping first
+        if funding_stage_clean in stage_map:
+            return stage_map[funding_stage_clean]
+        
+        # Try partial matches for complex stages
+        if 'PRE' in funding_stage_clean and 'SEED' in funding_stage_clean:
+            return 'PRE_SEED'
+        elif 'SEED' in funding_stage_clean:
+            return 'SEED'
+        elif 'SERIES' in funding_stage_clean:
+            if 'A' in funding_stage_clean:
+                return 'SERIES_A'
+            elif 'B' in funding_stage_clean:
+                return 'SERIES_B'
+            elif 'C' in funding_stage_clean:
+                return 'SERIES_C'
+            elif any(letter in funding_stage_clean for letter in ['D', 'E', 'F']):
+                return 'SERIES_D_PLUS'
+        elif any(word in funding_stage_clean for word in ['PUBLIC', 'IPO', 'TRADED']):
+            return 'PUBLIC'
+        
+        # Default to None if can't parse
+        return None
     
     def _get_entity_type_id(self) -> str:
         """Get the entity type ID for AI tools"""
