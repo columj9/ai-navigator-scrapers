@@ -135,8 +135,8 @@ class EnhancedItemProcessor:
             "feature_ids": feature_ids[:10],   # Limit to 10 features
             "meta_title": f"{tool_name} | AI Navigator",
             "meta_description": enriched_data.get('short_description', '')[:160],
-            "employee_count_range": company_info.get('employee_count_range'),
-            "funding_stage": company_info.get('funding_stage'),
+            "employee_count_range": self._normalize_employee_count(company_info.get('employee_count_range')),
+            "funding_stage": self._normalize_funding_stage(company_info.get('funding_stage')),
             "location_summary": company_info.get('location_summary'),
             "ref_link": actual_website_url,  # Use actual URL for ref_link too
             "affiliate_status": "NONE",
