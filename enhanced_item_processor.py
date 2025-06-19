@@ -275,6 +275,28 @@ class EnhancedItemProcessor:
         
         return pricing_map.get(pricing_model, 'FREEMIUM')  # Default to FREEMIUM
     
+    def _normalize_price_range(self, price_range: str) -> str:
+        """Normalize price range to match API enum values"""
+        if not price_range:
+            return 'MEDIUM'
+            
+        price_range = price_range.upper().strip()
+        
+        # Handle multiple values (take the first one)
+        if '|' in price_range:
+            price_range = price_range.split('|')[0].strip()
+        
+        # Map to valid enum values
+        price_map = {
+            'FREE': 'FREE',
+            'LOW': 'LOW',
+            'MEDIUM': 'MEDIUM',
+            'HIGH': 'HIGH',
+            'ENTERPRISE': 'ENTERPRISE'
+        }
+        
+        return price_map.get(price_range, 'MEDIUM')  # Default to MEDIUM
+    
     def _normalize_employee_count(self, employee_count: str) -> Optional[str]:
         """Normalize employee count to match API enum values"""
         if not employee_count:
