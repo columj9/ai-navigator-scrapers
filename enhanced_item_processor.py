@@ -222,6 +222,28 @@ class EnhancedItemProcessor:
         
         return pricing_map.get(pricing_model, 'FREEMIUM')  # Default to FREEMIUM
     
+    def _normalize_price_range(self, price_range: str) -> str:
+        """Normalize price range to match API enum values"""
+        if not price_range:
+            return 'MEDIUM'
+            
+        price_range = price_range.upper().strip()
+        
+        # Handle multiple values (take the first one)
+        if '|' in price_range:
+            price_range = price_range.split('|')[0].strip()
+        
+        # Map to valid enum values
+        price_map = {
+            'FREE': 'FREE',
+            'LOW': 'LOW',
+            'MEDIUM': 'MEDIUM',
+            'HIGH': 'HIGH',
+            'ENTERPRISE': 'ENTERPRISE'
+        }
+        
+        return price_map.get(price_range, 'MEDIUM')  # Default to MEDIUM
+    
     def _get_entity_type_id(self) -> str:
         """Get the entity type ID for AI tools"""
         return "e35dea27-b628-40fc-99c5-e09ae63fb135"  # AI Tool entity type ID
