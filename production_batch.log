@@ -1,0 +1,516 @@
+=== STEP 3: PRODUCTION RUN - PROCESSING MORE FUTURETOOLS LEADS ===
+
+2025-06-19 06:08:58,041 - ai_navigator_client - INFO - Successfully refreshed AI Navigator API token
+2025-06-19 06:08:58,221 - taxonomy_service - INFO - Loaded 9 categories
+2025-06-19 06:08:58,337 - taxonomy_service - INFO - Loaded 15 tags
+2025-06-19 06:08:58,455 - taxonomy_service - INFO - Loaded 8 features
+📊 Total FutureTools leads available: 20
+🚀 Processing production batch (items 10-20)...
+
+[11/20] Processing: MatMat AI
+2025-06-19 06:08:58,748 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/matmat-ai → https://www.matmat.ai/?ref=futuretools.io
+2025-06-19 06:08:58,749 - enhanced_item_processor - INFO - Processing lead: MatMat AI from futuretools.io
+2025-06-19 06:09:06,376 - data_enrichment_service - INFO - Successfully enriched data for MatMat AI
+2025-06-19 06:09:08,284 - taxonomy_service - WARNING - Could not map category: 'Customer Service'
+2025-06-19 06:09:08,284 - taxonomy_service - WARNING - Could not map tag: 'AI-powered'
+2025-06-19 06:09:08,285 - taxonomy_service - WARNING - Could not map tag: 'Customer Support'
+2025-06-19 06:09:08,285 - taxonomy_service - WARNING - Could not map tag: 'Lead Management'
+2025-06-19 06:09:08,286 - taxonomy_service - WARNING - Could not map tag: 'Unified Inbox'
+2025-06-19 06:09:08,286 - taxonomy_service - WARNING - Could not map feature: 'Unified inbox for consolidating all incoming communication'
+2025-06-19 06:09:08,287 - taxonomy_service - WARNING - Could not map feature: 'AI-powered automation for responding to inquiries'
+2025-06-19 06:09:08,287 - taxonomy_service - WARNING - Could not map feature: '24/7 customer support'
+2025-06-19 06:09:08,288 - taxonomy_service - WARNING - Could not map feature: 'Instant lead engagement'
+2025-06-19 06:09:08,288 - taxonomy_service - WARNING - Could not map feature: 'Boosts response rates and customer satisfaction'
+2025-06-19 06:09:08,289 - enhanced_item_processor - INFO - Successfully processed lead for MatMat AI
+2025-06-19 06:09:08,506 - ai_navigator_client - ERROR - Failed to create entity: 409 - {"statusCode":409,"message":"A record with this 'name' already exists.","error":"DatabaseError","details":{"fields":["name"],"reason":"unique_constraint_failed"},"timestamp":"2025-06-19T06:09:08.491Z","path":"/entities"}
+2025-06-19 06:09:08,506 - ai_navigator_client - ERROR - Entity data: {
+  "name": "MatMat AI",
+  "website_url": "https://www.matmat.ai/?ref=futuretools.io",
+  "entity_type_id": "e35dea27-b628-40fc-99c5-e09ae63fb135",
+  "short_description": "MatMat AI is an AI-powered unified inbox that consolidates and responds to all incoming communication, boosting response rates, customer satisfaction, and conversions.",
+  "description": "MatMat AI is a smart, unified inbox designed for modern businesses. It consolidates and responds to all incoming communication, whether from website forms, text messages, calls, or third-party platforms, using intelligent AI automation. This tool helps businesses manage high volumes of inquiries across multiple channels, engage leads faster, and provide 24/7 customer support without constant human intervention. By engaging leads instantly, MatMat AI boosts response rates, customer satisfaction, and conversions. It is particularly useful in real estate, healthcare, services, and e-commerce sectors, ensuring no opportunity slips away.",
+  "logo_url": "https://www.matmat.ai/wp-content/uploads/2025/03/logo-matmatAI.svg",
+  "privacy_policy_url": "https://www.matmat.ai/privacy-policy/",
+  "category_ids": [
+    "08883b20-8f17-424a-b2d6-531bdea741d8"
+  ],
+  "meta_title": "MatMat AI | AI Navigator",
+  "meta_description": "MatMat AI is an AI-powered unified inbox that consolidates and responds to all incoming communication, boosting response rates, customer satisfaction, and conve",
+  "ref_link": "https://www.matmat.ai/?ref=futuretools.io",
+  "affiliate_status": "NONE",
+  "status": "ACTIVE",
+  "tool_details": {
+    "learning_curve": "MEDIUM",
+    "key_features": [
+      "Unified inbox for consolidating all incoming communication",
+      "AI-powered automation for responding to inquiries",
+      "24/7 customer support",
+      "Instant lead engagement",
+      "Boosts response rates and customer satisfaction"
+    ],
+    "has_free_tier": false,
+    "use_cases": [
+      "Real estate lead management",
+      "Healthcare patient communication",
+      "Service industry customer support",
+      "E-commerce order management"
+    ],
+    "pricing_model": "SUBSCRIPTION",
+    "price_range": "MEDIUM",
+    "pricing_details": {
+      "monthly_payment": true,
+      "trial_available": true,
+      "trial_duration": "7 Days",
+      "trial_requirement": "Credit card required"
+    },
+    "pricing_url": "https://www.matmat.ai/pricing/",
+    "has_live_chat": false,
+    "target_audience": [
+      "Businesses in real estate",
+      "Healthcare providers",
+      "Service industry companies",
+      "E-commerce businesses"
+    ],
+    "mobile_support": true,
+    "customization_level": "Medium",
+    "trial_available": false,
+    "demo_available": false,
+    "open_source": false,
+    "support_channels": [
+      "Email",
+      "Documentation"
+    ]
+  }
+}
+    ❌ Failed to create entity in API
+
+[12/20] Processing: LunaCal
+2025-06-19 06:09:11,723 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/lunacal-ai → https://lunacal.ai/?ref=futuretools.io
+2025-06-19 06:09:11,724 - enhanced_item_processor - INFO - Processing lead: LunaCal from futuretools.io
+2025-06-19 06:09:17,232 - data_enrichment_service - INFO - Successfully enriched data for LunaCal
+2025-06-19 06:09:19,473 - taxonomy_service - WARNING - Could not map category: 'Appointment Booking'
+2025-06-19 06:09:19,474 - taxonomy_service - WARNING - Could not map category: 'Calendar Scheduling'
+2025-06-19 06:09:19,474 - taxonomy_service - WARNING - Could not map tag: 'Scheduling Software'
+2025-06-19 06:09:19,475 - taxonomy_service - WARNING - Could not map tag: 'Automated Reminders'
+2025-06-19 06:09:19,476 - taxonomy_service - WARNING - Could not map tag: 'Customizable Booking Pages'
+2025-06-19 06:09:19,477 - taxonomy_service - WARNING - Could not map feature: 'Calendar Sync'
+2025-06-19 06:09:19,478 - taxonomy_service - WARNING - Could not map feature: 'Automated Reminders'
+2025-06-19 06:09:19,479 - taxonomy_service - WARNING - Could not map feature: 'Customizable Booking Pages'
+2025-06-19 06:09:19,480 - taxonomy_service - WARNING - Could not map feature: 'Round-Robin & Collective Scheduling'
+2025-06-19 06:09:19,480 - taxonomy_service - WARNING - Could not map feature: 'Buffer Times'
+2025-06-19 06:09:19,480 - enhanced_item_processor - INFO - Successfully processed lead for LunaCal
+2025-06-19 06:09:19,657 - ai_navigator_client - ERROR - Failed to create entity: 409 - {"statusCode":409,"message":"A record with this 'name' already exists.","error":"DatabaseError","details":{"fields":["name"],"reason":"unique_constraint_failed"},"timestamp":"2025-06-19T06:09:19.644Z","path":"/entities"}
+2025-06-19 06:09:19,658 - ai_navigator_client - ERROR - Entity data: {
+  "name": "LunaCal",
+  "website_url": "https://lunacal.ai/?ref=futuretools.io",
+  "entity_type_id": "e35dea27-b628-40fc-99c5-e09ae63fb135",
+  "short_description": "Lunacal is a powerful scheduling software that supports calendar sync, automated reminders, and customizable booking pages to streamline meeting and appointment scheduling.",
+  "description": "Lunacal is an intuitive scheduling solution designed to make organizing meetings, appointments, and events effortless. It syncs seamlessly with popular calendars like Google, Outlook, and Apple, ensuring all bookings are in one place. The platform offers customizable booking pages to align with your brand's look and feel, and features automated reminders to keep everyone on track. Whether you're scheduling solo meetings or coordinating teams with round-robin or collective scheduling, Lunacal simplifies the process. It also provides tailored features for various professional sectors such as education, healthcare, legal, and fitness. The platform's versatility ensures that your business runs smoothly and efficiently with seamless integration options and user-friendly management tools.",
+  "contact_url": "https://lunacal.ai/contact-us",
+  "privacy_policy_url": "https://lunacal.ai/privacy-policy",
+  "founded_year": 2023,
+  "social_links": {
+    "linkedin": "www.linkedin.com/company/lunacal.ai"
+  },
+  "category_ids": [
+    "d635d8b6-3fda-43b3-83c7-f4887d3e03f7"
+  ],
+  "meta_title": "LunaCal | AI Navigator",
+  "meta_description": "Lunacal is a powerful scheduling software that supports calendar sync, automated reminders, and customizable booking pages to streamline meeting and appointment",
+  "location_summary": "India",
+  "ref_link": "https://lunacal.ai/?ref=futuretools.io",
+  "affiliate_status": "NONE",
+  "status": "ACTIVE",
+  "tool_details": {
+    "learning_curve": "MEDIUM",
+    "key_features": [
+      "Calendar Sync",
+      "Automated Reminders",
+      "Customizable Booking Pages",
+      "Round-Robin & Collective Scheduling",
+      "Buffer Times"
+    ],
+    "has_free_tier": true,
+    "use_cases": [
+      "Scheduling solo meetings",
+      "Coordinating team meetings",
+      "Streamlining event organization",
+      "Managing appointments in various professional sectors (education, healthcare, legal, fitness)",
+      "Enhancing productivity and collaboration"
+    ],
+    "pricing_model": "SUBSCRIPTION",
+    "price_range": "LOW",
+    "pricing_details": "Paid plans start at $10/month per user, unlocking advanced features like custom branding and team scheduling. A free plan with basic features is also available.",
+    "pricing_url": "https://lunacal.ai/pricing",
+    "integrations": [
+      "Google Calendar",
+      "Outlook Calendar",
+      "Apple Calendar"
+    ],
+    "has_live_chat": false,
+    "target_audience": [
+      "Freelancers",
+      "Small businesses",
+      "Teams and professionals handling multiple types of appointments"
+    ],
+    "mobile_support": false,
+    "api_access": true,
+    "customization_level": "Medium",
+    "trial_available": true,
+    "demo_available": false,
+    "open_source": false,
+    "support_channels": [
+      "Email",
+      "Documentation"
+    ]
+  }
+}
+    ❌ Failed to create entity in API
+
+[13/20] Processing: PlayWise
+2025-06-19 06:09:22,875 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/playwisehq-com → https://playwisehq.com/?ref=futuretools.io
+2025-06-19 06:09:22,876 - enhanced_item_processor - INFO - Processing lead: PlayWise from futuretools.io
+2025-06-19 06:09:29,788 - data_enrichment_service - INFO - Successfully enriched data for PlayWise
+2025-06-19 06:09:31,803 - taxonomy_service - WARNING - Could not map category: 'Education'
+2025-06-19 06:09:31,803 - taxonomy_service - WARNING - Could not map category: 'Sales Strategy'
+2025-06-19 06:09:31,804 - taxonomy_service - WARNING - Could not map tag: 'AI-driven'
+2025-06-19 06:09:31,804 - taxonomy_service - WARNING - Could not map tag: 'Personalized Learning'
+2025-06-19 06:09:31,805 - taxonomy_service - WARNING - Could not map tag: 'Sales Strategy Optimization'
+2025-06-19 06:09:31,806 - taxonomy_service - WARNING - Could not map feature: 'Market Analysis'
+2025-06-19 06:09:31,807 - taxonomy_service - WARNING - Could not map feature: 'Competitor Tracking'
+2025-06-19 06:09:31,809 - taxonomy_service - WARNING - Could not map feature: 'Data Visualization'
+2025-06-19 06:09:31,809 - taxonomy_service - WARNING - Could not map feature: 'Custom Reports'
+2025-06-19 06:09:31,810 - taxonomy_service - WARNING - Could not map feature: 'Real Time Alerts'
+2025-06-19 06:09:31,810 - taxonomy_service - WARNING - Could not map feature: 'Social Media Monitoring'
+2025-06-19 06:09:31,811 - taxonomy_service - WARNING - Could not map feature: 'Keyword Analysis'
+2025-06-19 06:09:31,811 - taxonomy_service - WARNING - Could not map feature: 'Sentiment Analysis'
+2025-06-19 06:09:31,812 - taxonomy_service - WARNING - Could not map feature: 'Benchmarking'
+2025-06-19 06:09:31,812 - taxonomy_service - WARNING - Could not map feature: 'Audience Insights'
+2025-06-19 06:09:31,812 - taxonomy_service - WARNING - Could not map feature: 'Product Comparison'
+2025-06-19 06:09:31,813 - taxonomy_service - WARNING - Could not map feature: 'Pricing Analysis'
+2025-06-19 06:09:31,813 - taxonomy_service - WARNING - Could not map feature: 'SWOT Analysis'
+2025-06-19 06:09:31,814 - taxonomy_service - WARNING - Could not map feature: 'Geographic Insights'
+2025-06-19 06:09:31,815 - taxonomy_service - WARNING - Could not map feature: 'Industry Reports'
+2025-06-19 06:09:31,816 - taxonomy_service - WARNING - Could not map feature: 'Collaboration Tools'
+2025-06-19 06:09:31,816 - taxonomy_service - WARNING - Could not map feature: 'API Access'
+2025-06-19 06:09:31,817 - taxonomy_service - WARNING - Could not map feature: 'Data Export'
+2025-06-19 06:09:31,817 - enhanced_item_processor - INFO - Successfully processed lead for PlayWise
+2025-06-19 06:09:32,964 - ai_navigator_client - INFO - Successfully created entity: PlayWise
+    ✅ SUCCESS! PlayWise
+       ID: 62bdb3f0-ee14-4892-b621-d9a35e65419e
+       URL: N/A
+
+[14/20] Processing: Scribbe AI Note Taker
+2025-06-19 06:09:36,264 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/scribbe-ai-note-taker → https://apps.apple.com/us/app/scribbe-ai-note-taker/id6736370215?ref=futuretools.io
+2025-06-19 06:09:36,264 - enhanced_item_processor - INFO - Processing lead: Scribbe AI Note Taker from futuretools.io
+2025-06-19 06:09:42,108 - data_enrichment_service - INFO - Successfully enriched data for Scribbe AI Note Taker
+2025-06-19 06:09:44,545 - taxonomy_service - WARNING - Could not map category: 'Productivity'
+2025-06-19 06:09:44,546 - taxonomy_service - WARNING - Could not map category: 'Note-taking'
+2025-06-19 06:09:44,546 - taxonomy_service - WARNING - Could not map tag: 'AI-powered'
+2025-06-19 06:09:44,546 - taxonomy_service - WARNING - Could not map tag: 'Note-taking'
+2025-06-19 06:09:44,547 - taxonomy_service - WARNING - Could not map tag: 'Audio Recording'
+2025-06-19 06:09:44,548 - taxonomy_service - WARNING - Could not map feature: 'Audio Recording & Processing'
+2025-06-19 06:09:44,548 - taxonomy_service - WARNING - Could not map feature: 'AI-Powered Transcription'
+2025-06-19 06:09:44,549 - taxonomy_service - WARNING - Could not map feature: 'Intelligent Content Analysis'
+2025-06-19 06:09:44,549 - taxonomy_service - WARNING - Could not map feature: 'Automatic Speaker Identification and Separation'
+2025-06-19 06:09:44,551 - taxonomy_service - WARNING - Could not map feature: 'Background Noise Reduction'
+2025-06-19 06:09:44,551 - enhanced_item_processor - INFO - Successfully processed lead for Scribbe AI Note Taker
+2025-06-19 06:09:44,729 - ai_navigator_client - ERROR - Failed to create entity: 409 - {"statusCode":409,"message":"A record with this 'name' already exists.","error":"DatabaseError","details":{"fields":["name"],"reason":"unique_constraint_failed"},"timestamp":"2025-06-19T06:09:44.715Z","path":"/entities"}
+2025-06-19 06:09:44,730 - ai_navigator_client - ERROR - Entity data: {
+  "name": "Scribbe AI Note Taker",
+  "website_url": "https://apps.apple.com/us/app/scribbe-ai-note-taker/id6736370215?ref=futuretools.io",
+  "entity_type_id": "e35dea27-b628-40fc-99c5-e09ae63fb135",
+  "short_description": "Scribbe AI Note Taker is an app that converts spoken audio into organized and actionable text, ideal for meetings, classes, and personal dictation.",
+  "description": "Scribbe AI Note Taker is an advanced AI-powered tool designed to handle note-taking tasks efficiently. It focuses on in-person audio recordings, making it perfect for meetings, classes, personal dictation, and appointments. The app converts spoken words into organized, easy-to-read text, including transcripts, summaries, and detailed notes. It features automatic speaker identification and separation, ensuring clear audio capture with background noise reduction. The tool is secure and private, allowing users to focus on the conversation without worrying about note-taking. It extracts action items and follow-ups, providing a structured format for easy reference. This makes it a valuable tool for professionals to capture meeting minutes and share discussion points with team members, as well as for academics to record lectures and study sessions.",
+  "privacy_policy_url": "https://www.apple.com/legal/privacy/",
+  "category_ids": [
+    "d635d8b6-3fda-43b3-83c7-f4887d3e03f7"
+  ],
+  "tag_ids": [
+    "8704bd68-8d33-4fde-b586-0210725a84cd"
+  ],
+  "meta_title": "Scribbe AI Note Taker | AI Navigator",
+  "meta_description": "Scribbe AI Note Taker is an app that converts spoken audio into organized and actionable text, ideal for meetings, classes, and personal dictation.",
+  "ref_link": "https://apps.apple.com/us/app/scribbe-ai-note-taker/id6736370215?ref=futuretools.io",
+  "affiliate_status": "NONE",
+  "status": "ACTIVE",
+  "tool_details": {
+    "learning_curve": "MEDIUM",
+    "key_features": [
+      "Audio Recording & Processing",
+      "AI-Powered Transcription",
+      "Intelligent Content Analysis",
+      "Automatic Speaker Identification and Separation",
+      "Background Noise Reduction"
+    ],
+    "has_free_tier": false,
+    "use_cases": [
+      "Professional Meetings",
+      "Academic Settings",
+      "Personal Notes"
+    ],
+    "pricing_model": "ONE_TIME_PURCHASE",
+    "price_range": "LOW",
+    "pricing_details": "The app is available for one-time purchase on the App Store.",
+    "has_live_chat": false,
+    "target_audience": [
+      "Professionals",
+      "Academics",
+      "Individuals"
+    ],
+    "mobile_support": true,
+    "api_access": false,
+    "customization_level": "Medium",
+    "trial_available": false,
+    "demo_available": false,
+    "open_source": false,
+    "support_channels": [
+      "Email",
+      "Documentation"
+    ]
+  }
+}
+    ❌ Failed to create entity in API
+
+[15/20] Processing: TaleFlow
+2025-06-19 06:09:47,958 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/taleflow-ai → https://www.taleflow.ai/?ref=futuretools.io
+2025-06-19 06:09:47,958 - enhanced_item_processor - INFO - Processing lead: TaleFlow from futuretools.io
+2025-06-19 06:09:52,471 - data_enrichment_service - INFO - Successfully enriched data for TaleFlow
+2025-06-19 06:09:54,671 - taxonomy_service - WARNING - Could not map category: 'Writing and Editing'
+2025-06-19 06:09:54,671 - taxonomy_service - WARNING - Could not map category: 'Content Creation'
+2025-06-19 06:09:54,672 - taxonomy_service - WARNING - Could not map tag: 'AI Writing Assistant'
+2025-06-19 06:09:54,673 - taxonomy_service - WARNING - Could not map tag: 'Narrative Consistency'
+2025-06-19 06:09:54,674 - taxonomy_service - WARNING - Could not map tag: 'Fiction Writing Tools'
+2025-06-19 06:09:54,675 - taxonomy_service - WARNING - Could not map feature: 'AI-powered manuscript analysis'
+2025-06-19 06:09:54,675 - taxonomy_service - WARNING - Could not map feature: 'Feature-rich editor'
+2025-06-19 06:09:54,676 - taxonomy_service - WARNING - Could not map feature: 'Brainstorming ideas'
+2025-06-19 06:09:54,676 - taxonomy_service - WARNING - Could not map feature: 'Text generation'
+2025-06-19 06:09:54,676 - taxonomy_service - WARNING - Could not map feature: 'Narrative structuring'
+2025-06-19 06:09:54,677 - enhanced_item_processor - INFO - Successfully processed lead for TaleFlow
+2025-06-19 06:09:55,408 - ai_navigator_client - INFO - Successfully created entity: TaleFlow
+    ✅ SUCCESS! TaleFlow
+       ID: fd098309-6dfc-48ee-a7b9-8c85e375cdf2
+       URL: N/A
+
+[16/20] Processing: AISDR
+2025-06-19 06:09:58,638 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/aisdr-com → https://aisdr.com/?ref=futuretools.io
+2025-06-19 06:09:58,639 - enhanced_item_processor - INFO - Processing lead: AISDR from futuretools.io
+2025-06-19 06:10:04,897 - data_enrichment_service - INFO - Successfully enriched data for AISDR
+2025-06-19 06:10:07,531 - taxonomy_service - WARNING - Could not map category: 'AI Sales Assistant'
+2025-06-19 06:10:07,533 - taxonomy_service - WARNING - Could not map tag: 'AI Sales Outreach'
+2025-06-19 06:10:07,536 - taxonomy_service - WARNING - Could not map tag: 'Sales Automation'
+2025-06-19 06:10:07,537 - taxonomy_service - WARNING - Could not map tag: 'Lead Generation'
+2025-06-19 06:10:07,537 - taxonomy_service - WARNING - Could not map tag: 'Sales Productivity'
+2025-06-19 06:10:07,538 - taxonomy_service - WARNING - Could not map feature: 'Lead Facilitation'
+2025-06-19 06:10:07,538 - taxonomy_service - WARNING - Could not map feature: 'Customer-facing Chatbot'
+2025-06-19 06:10:07,541 - taxonomy_service - WARNING - Could not map feature: 'Lead Qualification'
+2025-06-19 06:10:07,543 - taxonomy_service - WARNING - Could not map feature: 'Lead Follow-up'
+2025-06-19 06:10:07,544 - taxonomy_service - WARNING - Could not map feature: 'Meeting Scheduling'
+2025-06-19 06:10:07,545 - taxonomy_service - WARNING - Could not map feature: 'Opportunity and Pipeline Management'
+2025-06-19 06:10:07,545 - taxonomy_service - WARNING - Could not map feature: 'Data Entry'
+2025-06-19 06:10:07,546 - taxonomy_service - WARNING - Could not map feature: 'Integrations / APIs'
+2025-06-19 06:10:07,546 - taxonomy_service - WARNING - Could not map feature: 'AI Text Generation'
+2025-06-19 06:10:07,549 - taxonomy_service - WARNING - Could not map feature: 'AI Text Summarization'
+2025-06-19 06:10:07,551 - taxonomy_service - WARNING - Could not map feature: 'Prospecting based on lead data and hiring intent'
+2025-06-19 06:10:07,553 - taxonomy_service - WARNING - Could not map feature: 'Finding businesses that use a specific technology'
+2025-06-19 06:10:07,554 - taxonomy_service - WARNING - Could not map feature: 'Personalization with LinkedIn data'
+2025-06-19 06:10:07,554 - taxonomy_service - WARNING - Could not map feature: 'AI follow-up through SMS'
+2025-06-19 06:10:07,557 - enhanced_item_processor - INFO - Successfully processed lead for AISDR
+2025-06-19 06:10:07,766 - ai_navigator_client - ERROR - Failed to create entity: 400 - {"message":["logo_url must be a URL address"],"error":"Bad Request","statusCode":400}
+2025-06-19 06:10:07,767 - ai_navigator_client - ERROR - Entity data: {
+  "name": "AISDR",
+  "website_url": "https://aisdr.com/?ref=futuretools.io",
+  "entity_type_id": "e35dea27-b628-40fc-99c5-e09ae63fb135",
+  "short_description": "AI-powered sales automation tool for maximizing sales productivity and efficiency.",
+  "description": "AiSDR is an AI-driven sales automation platform designed to streamline sales outreach and lead generation. It offers a comprehensive suite of tools to help sales representatives maximize their productivity, focusing on tasks such as email setup, campaign creation, and personalized conversations. The platform includes features like lead qualification, follow-up, and scheduling meetings, as well as opportunity and pipeline management. AiSDR also integrates with various data sources to provide insights on lead hiring intent, job openings, and company milestones. This tool automates routine tasks, freeing up time for strategic thinking and business development. It is suitable for businesses across various industries, including finance, healthcare, and marketing.",
+  "logo_url": "data:image/svg+xml;nitro-empty-id=MTE0NjoyMzY=-1;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48L3N2Zz4=",
+  "privacy_policy_url": "https://aisdr.com/privacy-statement/",
+  "founded_year": 2023,
+  "category_ids": [
+    "08883b20-8f17-424a-b2d6-531bdea741d8"
+  ],
+  "meta_title": "AISDR | AI Navigator",
+  "meta_description": "AI-powered sales automation tool for maximizing sales productivity and efficiency.",
+  "employee_count_range": "C1_10",
+  "funding_stage": "SEED",
+  "location_summary": "San Francisco, CA, USA",
+  "ref_link": "https://aisdr.com/?ref=futuretools.io",
+  "affiliate_status": "NONE",
+  "status": "ACTIVE",
+  "tool_details": {
+    "learning_curve": "MEDIUM",
+    "key_features": [
+      "Lead Facilitation",
+      "Customer-facing Chatbot",
+      "Lead Qualification",
+      "Lead Follow-up",
+      "Meeting Scheduling",
+      "Opportunity and Pipeline Management",
+      "Data Entry",
+      "Integrations / APIs",
+      "AI Text Generation",
+      "AI Text Summarization",
+      "Prospecting based on lead data and hiring intent",
+      "Finding businesses that use a specific technology",
+      "Personalization with LinkedIn data",
+      "AI follow-up through SMS"
+    ],
+    "has_free_tier": false,
+    "use_cases": [
+      "Sales pipeline creation",
+      "Refining outreach strategies",
+      "Breaking into new markets",
+      "Winning with email outreach",
+      "Tracking champions who change jobs",
+      "Reaching out to power users immediately upon job change",
+      "Prospecting based on lead hiring intent",
+      "Finding lookalikes of best clients",
+      "Identifying companies that have recently closed a funding round"
+    ],
+    "pricing_model": "SUBSCRIPTION",
+    "price_range": "MEDIUM",
+    "pricing_details": "AiSDR offers a subscription-based model with specific pricing plans available upon request. Contact sales for detailed pricing information.",
+    "pricing_url": "https://aisdr.com/pricing/",
+    "integrations": [
+      "LinkedIn",
+      "Indeed",
+      "Calendar integrations"
+    ],
+    "has_live_chat": false,
+    "target_audience": [
+      "Sales teams",
+      "Marketing professionals",
+      "Business development teams"
+    ],
+    "mobile_support": false,
+    "api_access": true,
+    "customization_level": "Medium",
+    "trial_available": false,
+    "demo_available": false,
+    "open_source": false,
+    "support_channels": [
+      "Email",
+      "Documentation"
+    ]
+  }
+}
+    ❌ Failed to create entity in API
+
+[17/20] Processing: Prompt Shuttle
+2025-06-19 06:10:11,085 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/promptshuttle-com → https://www.promptshuttle.com/?ref=futuretools.io
+2025-06-19 06:10:11,085 - enhanced_item_processor - INFO - Processing lead: Prompt Shuttle from futuretools.io
+2025-06-19 06:10:15,800 - data_enrichment_service - INFO - Successfully enriched data for Prompt Shuttle
+2025-06-19 06:10:18,000 - taxonomy_service - WARNING - Could not map category: 'AI tools'
+2025-06-19 06:10:18,000 - taxonomy_service - WARNING - Could not map category: 'Collaboration tools'
+2025-06-19 06:10:18,001 - taxonomy_service - WARNING - Could not map category: 'Productivity tools'
+2025-06-19 06:10:18,001 - taxonomy_service - WARNING - Could not map tag: 'AI productivity'
+2025-06-19 06:10:18,002 - taxonomy_service - WARNING - Could not map tag: 'Reusable templates'
+2025-06-19 06:10:18,003 - taxonomy_service - WARNING - Could not map feature: 'Reusable templates'
+2025-06-19 06:10:18,003 - taxonomy_service - WARNING - Could not map feature: 'Structured prompts for improved AI output quality'
+2025-06-19 06:10:18,004 - taxonomy_service - WARNING - Could not map feature: 'Team collaboration features'
+2025-06-19 06:10:18,004 - taxonomy_service - WARNING - Could not map feature: 'Unified approach to AI interactions'
+2025-06-19 06:10:18,005 - taxonomy_service - WARNING - Could not map feature: 'Time-saving capabilities'
+2025-06-19 06:10:18,005 - enhanced_item_processor - INFO - Successfully processed lead for Prompt Shuttle
+2025-06-19 06:10:19,044 - ai_navigator_client - INFO - Successfully created entity: Prompt Shuttle
+    ✅ SUCCESS! Prompt Shuttle
+       ID: 0f32500f-7cea-473b-b2e9-eb064729eb9c
+       URL: N/A
+
+[18/20] Processing: PromptAtlas
+2025-06-19 06:10:22,277 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/promptatlas-ai → https://www.promptatlas.ai/?ref=futuretools.io
+2025-06-19 06:10:22,277 - enhanced_item_processor - INFO - Processing lead: PromptAtlas from futuretools.io
+2025-06-19 06:10:28,165 - data_enrichment_service - INFO - Successfully enriched data for PromptAtlas
+2025-06-19 06:10:30,237 - taxonomy_service - WARNING - Could not map category: 'AI'
+2025-06-19 06:10:30,237 - taxonomy_service - WARNING - Could not map category: 'Knowledge management'
+2025-06-19 06:10:30,238 - taxonomy_service - WARNING - Could not map category: 'Content creation'
+2025-06-19 06:10:30,238 - taxonomy_service - WARNING - Could not map tag: 'AI Assistant'
+2025-06-19 06:10:30,239 - taxonomy_service - WARNING - Could not map tag: 'Knowledge management'
+2025-06-19 06:10:30,239 - taxonomy_service - WARNING - Could not map tag: 'Content creation'
+2025-06-19 06:10:30,240 - taxonomy_service - WARNING - Could not map feature: 'Text summarization'
+2025-06-19 06:10:30,240 - taxonomy_service - WARNING - Could not map feature: 'Language translation'
+2025-06-19 06:10:30,240 - taxonomy_service - WARNING - Could not map feature: 'Content creation'
+2025-06-19 06:10:30,241 - taxonomy_service - WARNING - Could not map feature: 'Integration with Microsoft 365'
+2025-06-19 06:10:30,241 - taxonomy_service - WARNING - Could not map feature: 'API for third-party applications'
+2025-06-19 06:10:30,242 - taxonomy_service - WARNING - Could not map feature: 'Personalized AI Assistant responses'
+2025-06-19 06:10:30,242 - taxonomy_service - WARNING - Could not map feature: 'Governance for company policies'
+2025-06-19 06:10:30,243 - taxonomy_service - WARNING - Could not map feature: 'Comprehensive audit trails'
+2025-06-19 06:10:30,243 - taxonomy_service - WARNING - Could not map feature: 'In-context knowledge copilot experiences'
+2025-06-19 06:10:30,244 - taxonomy_service - WARNING - Could not map feature: 'Permissions management and usage controls'
+2025-06-19 06:10:30,244 - enhanced_item_processor - INFO - Successfully processed lead for PromptAtlas
+2025-06-19 06:10:30,898 - ai_navigator_client - INFO - Successfully created entity: PromptAtlas
+    ✅ SUCCESS! PromptAtlas
+       ID: eb067fc1-b6db-4cd7-b423-95c82cc5eafb
+       URL: N/A
+
+[19/20] Processing: CloseGPT
+2025-06-19 06:10:34,117 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/closegpt-ai → https://www.closegpt.ai/?ref=futuretools.io
+2025-06-19 06:10:34,118 - enhanced_item_processor - INFO - Processing lead: CloseGPT from futuretools.io
+2025-06-19 06:10:34,655 - enhanced_item_processor - WARNING - Could not scrape website data from https://www.closegpt.ai/?ref=futuretools.io: 'href'
+2025-06-19 06:10:41,569 - data_enrichment_service - INFO - Successfully enriched data for CloseGPT
+2025-06-19 06:10:43,681 - taxonomy_service - WARNING - Could not map category: 'CRM'
+2025-06-19 06:10:43,682 - taxonomy_service - WARNING - Could not map category: 'Customer Service Automation'
+2025-06-19 06:10:43,682 - taxonomy_service - WARNING - Could not map tag: 'AI-driven sales'
+2025-06-19 06:10:43,683 - taxonomy_service - WARNING - Could not map tag: 'CRM integration'
+2025-06-19 06:10:43,683 - taxonomy_service - WARNING - Could not map tag: 'Sales automation'
+2025-06-19 06:10:43,694 - taxonomy_service - WARNING - Could not map tag: 'Customer service automation'
+2025-06-19 06:10:43,695 - taxonomy_service - WARNING - Could not map feature: 'Automatically update customer records'
+2025-06-19 06:10:43,695 - taxonomy_service - WARNING - Could not map feature: 'Track all interactions for insightful analytics'
+2025-06-19 06:10:43,696 - taxonomy_service - WARNING - Could not map feature: 'Prioritize prospects based on AI-driven scoring'
+2025-06-19 06:10:43,701 - taxonomy_service - WARNING - Could not map feature: 'Appointment Scheduling Automation'
+2025-06-19 06:10:43,701 - taxonomy_service - WARNING - Could not map feature: 'Unified Inbox Management'
+2025-06-19 06:10:43,702 - taxonomy_service - WARNING - Could not map feature: 'SMS Marketing'
+2025-06-19 06:10:43,702 - taxonomy_service - WARNING - Could not map feature: 'Email Marketing'
+2025-06-19 06:10:43,703 - taxonomy_service - WARNING - Could not map feature: 'Phone System Integration'
+2025-06-19 06:10:43,703 - taxonomy_service - WARNING - Could not map feature: 'Pipeline Creation'
+2025-06-19 06:10:43,703 - taxonomy_service - WARNING - Could not map feature: 'A/B Testing'
+2025-06-19 06:10:43,704 - taxonomy_service - WARNING - Could not map feature: 'Hosted Forms for Surveys'
+2025-06-19 06:10:43,704 - taxonomy_service - WARNING - Could not map feature: 'Payment Processing'
+2025-06-19 06:10:43,704 - enhanced_item_processor - INFO - Successfully processed lead for CloseGPT
+2025-06-19 06:10:44,411 - ai_navigator_client - INFO - Successfully created entity: CloseGPT
+    ✅ SUCCESS! CloseGPT
+       ID: d0997bb5-13fd-4ff8-ad46-0e63fbc1d41f
+       URL: N/A
+
+[20/20] Processing: Grimly.ai
+2025-06-19 06:10:47,731 - enhanced_item_processor - INFO - Successfully resolved https://futuretools.link/grimly-ai → https://grimly.ai/?ref=futuretools.io
+2025-06-19 06:10:47,732 - enhanced_item_processor - INFO - Processing lead: Grimly.ai from futuretools.io
+2025-06-19 06:10:47,966 - enhanced_item_processor - WARNING - Could not scrape website data from https://grimly.ai/?ref=futuretools.io: HTTPSConnectionPool(host='grimly.ai', port=443): Max retries exceeded with url: /?ref=futuretools.io (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0xfeeabff26910>: Failed to resolve 'grimly.ai' ([Errno -5] No address associated with hostname)"))
+2025-06-19 06:10:54,484 - data_enrichment_service - INFO - Successfully enriched data for Grimly.ai
+2025-06-19 06:10:56,690 - taxonomy_service - WARNING - Could not map category: 'AI Metrics and Evaluation'
+2025-06-19 06:10:56,690 - taxonomy_service - WARNING - Could not map category: 'AI Content Detection'
+2025-06-19 06:10:56,691 - taxonomy_service - WARNING - Could not map tag: 'AI Security'
+2025-06-19 06:10:56,691 - taxonomy_service - WARNING - Could not map tag: 'LLM Protection'
+2025-06-19 06:10:56,693 - taxonomy_service - WARNING - Could not map tag: 'Prompt Injection Prevention'
+2025-06-19 06:10:56,694 - taxonomy_service - WARNING - Could not map tag: 'Jailbreak Detection'
+2025-06-19 06:10:56,695 - taxonomy_service - WARNING - Could not map feature: 'Blocks adversarial prompts before they reach the models'
+2025-06-19 06:10:56,697 - taxonomy_service - WARNING - Could not map feature: 'Detects reworded, translated, or obfuscated attacks using lightweight embedding models'
+2025-06-19 06:10:56,698 - taxonomy_service - WARNING - Could not map feature: 'Prevents attackers from exfiltrating or altering base system instructions'
+2025-06-19 06:10:56,700 - taxonomy_service - WARNING - Could not map feature: 'Enforces organization-specific policies with precision (blocklists, overrides, rate-limits, etc.)'
+2025-06-19 06:10:56,701 - taxonomy_service - WARNING - Could not map feature: 'Modifies, redacts, or stops malicious inputs before they reach the GenAI infrastructure'
+2025-06-19 06:10:56,703 - taxonomy_service - WARNING - Could not map feature: 'Logs every decision with full context for enterprise audits and compliance teams'
+2025-06-19 06:10:56,703 - taxonomy_service - WARNING - Could not map feature: 'Observes, analyzes, and responds instantly to threats across endpoints and organizations'
+2025-06-19 06:10:56,704 - taxonomy_service - WARNING - Could not map feature: 'Stops LLM agents from being manipulated or turned against operations'
+2025-06-19 06:10:56,705 - taxonomy_service - WARNING - Could not map feature: 'Aligns with GDPR, HIPAA, CCPA, and more by automatically flagging and protecting PII flows'
+2025-06-19 06:10:56,705 - enhanced_item_processor - INFO - Successfully processed lead for Grimly.ai
+2025-06-19 06:10:57,862 - ai_navigator_client - INFO - Successfully created entity: Grimly.ai
+    ✅ SUCCESS! Grimly.ai
+       ID: d950a5e9-a25b-4c3f-8fdc-923049033ccd
+       URL: N/A
+
+📊 PRODUCTION BATCH RESULTS:
+   ✅ Successful: 6
+   ❌ Failed: 4
+   ⏭️  Skipped: 0
+   📈 Success Rate: 60.0%
+
+🎉 TOTAL AI TOOLS NOW IN YOUR DATABASE: 9
+
+✨ Each entity includes:
+   • Actual resolved website URLs (not redirect links)
+   • Rich AI-generated descriptions and metadata
+   • Mapped categories, tags, and features
+   • Company information and funding details
+   • Comprehensive tool specifications
+   • SEO-optimized meta data
+
+🎯 Progress toward 500+ goal: 1.8%
