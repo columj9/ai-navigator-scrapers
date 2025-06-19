@@ -166,8 +166,8 @@ class DataEnrichmentService:
         Provide company information for "{tool_name}" (website: {website_url}) in JSON format:
         {{
             "founded_year": 2023,
-            "employee_count_range": "1-10|11-50|51-200|201-500|500+",
-            "funding_stage": "Pre-seed|Seed|Series A|Series B|Series C|Public|Unknown",
+            "employee_count_range": "1-10|11-50|51-200|201-500|501-1000|1001-5000|5000+",
+            "funding_stage": "PRE_SEED|SEED|SERIES_A|SERIES_B|SERIES_C|SERIES_D_PLUS|PUBLIC|Unknown",
             "location_summary": "City, Country or Remote",
             "social_links": {{
                 "twitter": "handle_without_@",
