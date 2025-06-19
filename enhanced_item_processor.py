@@ -224,7 +224,7 @@ class EnhancedItemProcessor:
     
     def _get_entity_type_id(self) -> str:
         """Get the entity type ID for AI tools"""
-        return "82d988e5-df78-4d63-a1a3-ed2159cf0c68"  # AI Tool entity type ID
+        return "e35dea27-b628-40fc-99c5-e09ae63fb135"  # AI Tool entity type ID
     
     def _clean_null_values(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """Recursively remove null/empty values from the data structure"""
