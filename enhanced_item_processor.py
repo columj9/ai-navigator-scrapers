@@ -255,6 +255,23 @@ class EnhancedItemProcessor:
             self.logger.warning(f"Could not scrape website data from {website_url}: {str(e)}")
             return {}
     
+    def _is_valid_url(self, url: str) -> bool:
+        """Validate that a URL is properly formatted"""
+        if not url or not isinstance(url, str):
+            return False
+        return url.startswith(('http://', 'https://')) and len(url) > 10
+    
+    def _get_guaranteed_fallback_logo(self, tool_name: str) -> str:
+        """Generate a guaranteed working fallback logo"""
+        if tool_name:
+            # Extract initials from tool name
+            import re
+            words = re.findall(r'\b\w', tool_name.upper())
+            initials = ''.join(words[:2])  # Take first 2 initials
+            return f"https://ui-avatars.com/api/?name={initials}&size=128&background=6366f1&color=ffffff&bold=true&format=png"
+        else:
+            return "https://ui-avatars.com/api/?name=AI&size=128&background=6366f1&color=ffffff&bold=true&format=png"
+    
     def _extract_logo_url(self, soup: BeautifulSoup, website_url: str) -> Optional[str]:
         """Enhanced logo extraction with multiple fallback methods"""
         from urllib.parse import urljoin, urlparse
