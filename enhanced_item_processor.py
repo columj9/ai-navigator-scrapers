@@ -25,21 +25,44 @@ class EnhancedItemProcessor:
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
             }
             
-            # Follow redirects to get final URL
-            response = requests.head(redirect_url, headers=headers, allow_redirects=True, timeout=10)
+            # Use GET request with allow_redirects to follow the full chain
+            response = requests.get(redirect_url, headers=headers, allow_redirects=True, timeout=15)
             final_url = response.url
             
-            # Validate it's a real website (not just another redirect service)
-            if any(domain in final_url for domain in ['futuretools.link', 'bit.ly', 'tinyurl.com', 'short.link']):
-                # Try GET request to get actual destination
-                response = requests.get(redirect_url, headers=headers, allow_redirects=True, timeout=10)
-                final_url = response.url
+            # Additional check: if we're still on a redirect service, try to parse the page
+            if any(domain in final_url for domain in ['futuretools.link', 'bit.ly', 'tinyurl.com']):
+                from bs4 import BeautifulSoup
+                soup = BeautifulSoup(response.text, 'html.parser')
+                
+                # Look for meta refresh redirects
+                meta_refresh = soup.find('meta', attrs={'http-equiv': 'refresh'})
+                if meta_refresh and meta_refresh.get('content'):
+                    content = meta_refresh.get('content')
+                    if 'url=' in content.lower():
+                        url_part = content.lower().split('url=')[1]
+                        final_url = url_part.strip('\'"')
+                
+                # Look for JavaScript redirects
+                scripts = soup.find_all('script')
+                for script in scripts:
+                    if script.string and 'window.location' in script.string:
+                        # Extract URL from JavaScript redirect
+                        import re
+                        js_redirect = re.search(r'window\.location.*?[\"\'](https?://[^\"\']+)', script.string)
+                        if js_redirect:
+                            final_url = js_redirect.group(1)
+                            break
             
-            self.logger.info(f"Resolved {redirect_url} → {final_url}")
-            return final_url
+            # Validate the final URL is different and looks like a real website
+            if final_url != redirect_url and final_url.startswith('http'):
+                self.logger.info(f"Successfully resolved {redirect_url} → {final_url}")
+                return final_url
+            else:
+                self.logger.warning(f"Could not resolve redirect {redirect_url}, using original")
+                return redirect_url
             
         except Exception as e:
-            self.logger.warning(f"Could not resolve redirect URL {redirect_url}: {str(e)}")
+            self.logger.warning(f"Error resolving redirect URL {redirect_url}: {str(e)}")
             return redirect_url  # Return original if resolution fails
 
     def process_lead_item(self, lead_item: Dict[str, Any]) -> Optional[Dict[str, Any]]:
