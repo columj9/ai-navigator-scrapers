@@ -18,6 +18,30 @@ class EnhancedItemProcessor:
         self.taxonomy_service = taxonomy_service
         self.logger = logging.getLogger(__name__)
     
+    def _resolve_redirect_url(self, redirect_url: str) -> str:
+        """Resolve redirect URLs to get the actual tool website"""
+        try:
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
+            }
+            
+            # Follow redirects to get final URL
+            response = requests.head(redirect_url, headers=headers, allow_redirects=True, timeout=10)
+            final_url = response.url
+            
+            # Validate it's a real website (not just another redirect service)
+            if any(domain in final_url for domain in ['futuretools.link', 'bit.ly', 'tinyurl.com', 'short.link']):
+                # Try GET request to get actual destination
+                response = requests.get(redirect_url, headers=headers, allow_redirects=True, timeout=10)
+                final_url = response.url
+            
+            self.logger.info(f"Resolved {redirect_url} → {final_url}")
+            return final_url
+            
+        except Exception as e:
+            self.logger.warning(f"Could not resolve redirect URL {redirect_url}: {str(e)}")
+            return redirect_url  # Return original if resolution fails
+
     def process_lead_item(self, lead_item: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """Transform a basic lead item into a full CreateEntityDto object"""
         
