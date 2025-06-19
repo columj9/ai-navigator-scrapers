@@ -102,7 +102,12 @@ class EnhancedItemProcessor:
         
         # Get guaranteed logo using enhanced logo extraction
         logo_url = self.logo_enhancer.get_comprehensive_logo(actual_website_url, tool_name)
-        website_data['logo_url'] = logo_url  # Ensure we always have a logo
+        # Validate logo URL format
+        if logo_url and self._is_valid_url(logo_url):
+            website_data['logo_url'] = logo_url  # Ensure we always have a valid logo
+        else:
+            # Fallback to a guaranteed working logo
+            website_data['logo_url'] = self._get_guaranteed_fallback_logo(tool_name)
         
         # Enhanced data enrichment with more context
         enriched_data = self.enrichment_service.enrich_tool_data(
