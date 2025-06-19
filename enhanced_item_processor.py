@@ -187,7 +187,7 @@ class EnhancedItemProcessor:
         return create_entity_dto
     
     def _scrape_website_data(self, website_url: str) -> Dict[str, Any]:
-        """Scrape basic information from the tool's website"""
+        """Scrape basic information from the tool's website with enhanced logo detection"""
         try:
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
@@ -201,23 +201,10 @@ class EnhancedItemProcessor:
             # Extract basic website data
             data = {}
             
-            # Try to find logo
-            logo_selectors = [
-                'img[alt*="logo"]',
-                'img[class*="logo"]',
-                'img[src*="logo"]',
-                '.logo img',
-                'header img'
-            ]
-            
-            for selector in logo_selectors:
-                logo_img = soup.select_one(selector)
-                if logo_img and logo_img.get('src'):
-                    logo_url = logo_img['src']
-                    if not logo_url.startswith('http'):
-                        logo_url = requests.compat.urljoin(website_url, logo_url)
-                    data['logo_url'] = logo_url
-                    break
+            # Enhanced logo detection with multiple methods
+            logo_url = self._extract_logo_url(soup, website_url)
+            if logo_url:
+                data['logo_url'] = logo_url
             
             # Try to find description from meta tags
             meta_desc = soup.find('meta', attrs={'name': 'description'})
@@ -256,6 +243,129 @@ class EnhancedItemProcessor:
         except Exception as e:
             self.logger.warning(f"Could not scrape website data from {website_url}: {str(e)}")
             return {}
+    
+    def _extract_logo_url(self, soup: BeautifulSoup, website_url: str) -> Optional[str]:
+        """Enhanced logo extraction with multiple fallback methods"""
+        from urllib.parse import urljoin, urlparse
+        
+        # Method 1: Look for specific logo selectors
+        logo_selectors = [
+            'img[alt*="logo" i]',
+            'img[class*="logo" i]',
+            'img[src*="logo" i]',
+            '.logo img',
+            'header img',
+            '.header img',
+            '.navbar img',
+            '.nav img',
+            'img[alt*="brand" i]',
+            'img[class*="brand" i]',
+            '.brand img',
+            '[class*="logo"] img',
+            'a[class*="logo"] img',
+            'div[class*="logo"] img'
+        ]
+        
+        for selector in logo_selectors:
+            logo_img = soup.select_one(selector)
+            if logo_img and logo_img.get('src'):
+                logo_url = logo_img['src']
+                # Convert relative URLs to absolute
+                if not logo_url.startswith('http'):
+                    logo_url = urljoin(website_url, logo_url)
+                
+                # Validate the logo URL
+                if self._validate_logo_url(logo_url):
+                    self.logger.info(f"Found logo via selector '{selector}': {logo_url}")
+                    return logo_url
+        
+        # Method 2: Look for Apple touch icons and favicons
+        icon_selectors = [
+            'link[rel="apple-touch-icon"]',
+            'link[rel="apple-touch-icon-precomposed"]', 
+            'link[rel="icon"]',
+            'link[rel="shortcut icon"]'
+        ]
+        
+        for selector in icon_selectors:
+            icon_link = soup.select_one(selector)
+            if icon_link and icon_link.get('href'):
+                icon_url = icon_link['href']
+                if not icon_url.startswith('http'):
+                    icon_url = urljoin(website_url, icon_url)
+                
+                # Only use if it's a reasonable size (not tiny favicon)
+                sizes = icon_link.get('sizes', '')
+                if any(size in sizes for size in ['180x180', '152x152', '144x144', '120x120']):
+                    if self._validate_logo_url(icon_url):
+                        self.logger.info(f"Found logo via icon '{selector}': {icon_url}")
+                        return icon_url
+        
+        # Method 3: Try common logo file paths
+        domain = urlparse(website_url).netloc
+        common_logo_paths = [
+            '/logo.png',
+            '/logo.svg', 
+            '/assets/logo.png',
+            '/assets/logo.svg',
+            '/static/logo.png',
+            '/static/logo.svg',
+            '/images/logo.png',
+            '/images/logo.svg',
+            '/img/logo.png',
+            '/img/logo.svg'
+        ]
+        
+        for path in common_logo_paths:
+            logo_url = urljoin(website_url, path)
+            if self._validate_logo_url(logo_url):
+                self.logger.info(f"Found logo via common path: {logo_url}")
+                return logo_url
+        
+        # Method 4: Use external logo services as fallback
+        fallback_logo = self._get_fallback_logo(website_url)
+        if fallback_logo:
+            return fallback_logo
+        
+        self.logger.warning(f"Could not find logo for {website_url}")
+        return None
+    
+    def _validate_logo_url(self, logo_url: str) -> bool:
+        """Validate that a logo URL is accessible and is an image"""
+        try:
+            response = requests.head(logo_url, timeout=10)
+            
+            # Check if URL is accessible
+            if response.status_code != 200:
+                return False
+            
+            # Check if it's an image
+            content_type = response.headers.get('content-type', '').lower()
+            if any(img_type in content_type for img_type in ['image/', 'png', 'jpg', 'jpeg', 'svg', 'gif', 'webp']):
+                return True
+            
+            return False
+            
+        except Exception:
+            return False
+    
+    def _get_fallback_logo(self, website_url: str) -> Optional[str]:
+        """Get fallback logo using external services"""
+        from urllib.parse import urlparse
+        
+        domain = urlparse(website_url).netloc
+        
+        # Method 1: Clearbit Logo API (free, no auth required)
+        clearbit_url = f"https://logo.clearbit.com/{domain}"
+        if self._validate_logo_url(clearbit_url):
+            self.logger.info(f"Found logo via Clearbit: {clearbit_url}")
+            return clearbit_url
+        
+        # Method 2: Google Favicon service (high quality favicons)
+        google_favicon_url = f"https://www.google.com/s2/favicons?domain={domain}&sz=128"
+        # Note: Google favicon always returns something, so we'll use it as last resort
+        self.logger.info(f"Using Google favicon as fallback: {google_favicon_url}")
+        return google_favicon_url
     
     def _name_exists(self, tool_name: str) -> bool:
         """Check if an entity with this name already exists"""
