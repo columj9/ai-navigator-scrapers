@@ -97,7 +97,7 @@ class EnhancedItemProcessor:
         # Build CreateEntityDto object
         create_entity_dto = {
             "name": tool_name,
-            "website_url": website_url,
+            "website_url": actual_website_url,  # Use the resolved actual URL
             "entity_type_id": entity_type_id,
             "short_description": enriched_data.get('short_description', f"{tool_name} - AI-powered productivity tool"),
             "description": enriched_data.get('description', ''),
@@ -115,7 +115,7 @@ class EnhancedItemProcessor:
             "employee_count_range": company_info.get('employee_count_range'),
             "funding_stage": company_info.get('funding_stage'),
             "location_summary": company_info.get('location_summary'),
-            "ref_link": website_url,
+            "ref_link": actual_website_url,  # Use actual URL for ref_link too
             "affiliate_status": "NONE",
             "status": "ACTIVE",
             "scraped_review_sentiment_label": None,  # V1 - skip sentiment analysis
