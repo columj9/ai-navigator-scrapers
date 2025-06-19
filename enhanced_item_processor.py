@@ -90,6 +90,11 @@ class EnhancedItemProcessor:
             self.logger.info(f"Entity already exists for {actual_website_url}, skipping")
             return None
         
+        # Also check for duplicate names and append timestamp if needed
+        import time
+        timestamp_suffix = str(int(time.time()))[-4:]  # Last 4 digits of timestamp
+        unique_tool_name = f"{tool_name} (Auto-{timestamp_suffix})" if self._name_exists(tool_name) else tool_name
+        
         # Scrape basic info from the actual tool website
         website_data = self._scrape_website_data(actual_website_url)
         
