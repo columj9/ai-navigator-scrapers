@@ -426,12 +426,12 @@ class EnhancedItemProcessor:
     
     def _normalize_employee_count(self, employee_count: str) -> Optional[str]:
         """Normalize employee count to match API enum values"""
-        if not employee_count:
+        if not employee_count or employee_count.lower() in ['unknown', 'n/a', 'na', '']:
             return None
             
-        employee_count = employee_count.upper().strip()
+        employee_count_clean = str(employee_count).upper().strip()
         
-        # Map to valid enum values
+        # Direct mapping for exact matches
         count_map = {
             '1-10': 'C1_10',
             '11-50': 'C11_50', 
@@ -440,11 +440,42 @@ class EnhancedItemProcessor:
             '501-1000': 'C501_1000',
             '1001-5000': 'C1001_5000',
             '5000+': 'C5001_PLUS',
-            '500+': 'C501_1000',  # Map 500+ to appropriate range
-            'UNKNOWN': None
+            '5001+': 'C5001_PLUS',
+            '500+': 'C501_1000',
+            '1000+': 'C1001_5000',
+            'UNKNOWN': None,
+            'SMALL': 'C1_10',
+            'MEDIUM': 'C11_50',
+            'LARGE': 'C201_500',
+            'ENTERPRISE': 'C5001_PLUS'
         }
         
-        return count_map.get(employee_count)
+        # Check direct mapping first
+        if employee_count_clean in count_map:
+            return count_map[employee_count_clean]
+        
+        # Try to extract number and map to range
+        import re
+        numbers = re.findall(r'\d+', employee_count_clean)
+        if numbers:
+            count = int(numbers[0])
+            if count <= 10:
+                return 'C1_10'
+            elif count <= 50:
+                return 'C11_50'
+            elif count <= 200:
+                return 'C51_200'
+            elif count <= 500:
+                return 'C201_500'
+            elif count <= 1000:
+                return 'C501_1000'
+            elif count <= 5000:
+                return 'C1001_5000'
+            else:
+                return 'C5001_PLUS'
+        
+        # Default to None if can't parse
+        return None
     
     def _normalize_funding_stage(self, funding_stage: str) -> Optional[str]:
         """Normalize funding stage to match API enum values"""
