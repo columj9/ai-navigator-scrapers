@@ -124,7 +124,7 @@ class EnhancedItemProcessor:
         
         # Build CreateEntityDto object
         create_entity_dto = {
-            "name": tool_name,
+            "name": unique_tool_name,  # Use unique name to avoid duplicates
             "website_url": actual_website_url,  # Use the resolved actual URL
             "entity_type_id": entity_type_id,
             "short_description": enriched_data.get('short_description', f"{tool_name} - AI-powered productivity tool"),
