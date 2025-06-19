@@ -275,27 +275,53 @@ class EnhancedItemProcessor:
         
         return pricing_map.get(pricing_model, 'FREEMIUM')  # Default to FREEMIUM
     
-    def _normalize_price_range(self, price_range: str) -> str:
-        """Normalize price range to match API enum values"""
-        if not price_range:
-            return 'MEDIUM'
+    def _normalize_employee_count(self, employee_count: str) -> Optional[str]:
+        """Normalize employee count to match API enum values"""
+        if not employee_count:
+            return None
             
-        price_range = price_range.upper().strip()
-        
-        # Handle multiple values (take the first one)
-        if '|' in price_range:
-            price_range = price_range.split('|')[0].strip()
+        employee_count = employee_count.upper().strip()
         
         # Map to valid enum values
-        price_map = {
-            'FREE': 'FREE',
-            'LOW': 'LOW',
-            'MEDIUM': 'MEDIUM',
-            'HIGH': 'HIGH',
-            'ENTERPRISE': 'ENTERPRISE'
+        count_map = {
+            '1-10': 'C1_10',
+            '11-50': 'C11_50', 
+            '51-200': 'C51_200',
+            '201-500': 'C201_500',
+            '501-1000': 'C501_1000',
+            '1001-5000': 'C1001_5000',
+            '5000+': 'C5001_PLUS',
+            '500+': 'C501_1000',  # Map 500+ to appropriate range
+            'UNKNOWN': None
         }
         
-        return price_map.get(price_range, 'MEDIUM')  # Default to MEDIUM
+        return count_map.get(employee_count)
+    
+    def _normalize_funding_stage(self, funding_stage: str) -> Optional[str]:
+        """Normalize funding stage to match API enum values"""
+        if not funding_stage or funding_stage.lower() == 'unknown':
+            return None
+            
+        funding_stage = funding_stage.upper().strip().replace('-', '_')
+        
+        # Map to valid enum values
+        stage_map = {
+            'PRE_SEED': 'PRE_SEED',
+            'PRESEED': 'PRE_SEED',
+            'SEED': 'SEED',
+            'SERIES_A': 'SERIES_A',
+            'SERIES A': 'SERIES_A',
+            'SERIES_B': 'SERIES_B', 
+            'SERIES B': 'SERIES_B',
+            'SERIES_C': 'SERIES_C',
+            'SERIES C': 'SERIES_C',
+            'SERIES_D_PLUS': 'SERIES_D_PLUS',
+            'SERIES D': 'SERIES_D_PLUS',
+            'PUBLIC': 'PUBLIC',
+            'UNKNOWN': None
+        }
+        
+        return stage_map.get(funding_stage)
     
     def _get_entity_type_id(self) -> str:
         """Get the entity type ID for AI tools"""
