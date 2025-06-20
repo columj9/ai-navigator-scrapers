@@ -144,7 +144,7 @@ class EnhancedItemProcessor:
             )
         
         # Get comprehensive company information
-        company_info = self.enrichment_service.get_company_info(tool_name, actual_website_url)
+        company_info = self.enrichment_service.get_company_info(tool_name, clean_website_url)
         
         # Map categories, tags, and features to UUIDs
         category_ids = self.taxonomy_service.map_categories(enriched_data.get('categories', []))
@@ -160,10 +160,10 @@ class EnhancedItemProcessor:
         # Create entity_type_id (assuming "tool" is the default type)
         entity_type_id = self._get_entity_type_id()
         
-        # Build CreateEntityDto object
+        # Build CreateEntityDto object with CLEAN URLs
         create_entity_dto = {
             "name": unique_tool_name,  # Use unique name to avoid duplicates
-            "website_url": actual_website_url,  # Use the resolved actual URL
+            "website_url": clean_website_url,  # Use the CLEAN resolved URL
             "entity_type_id": entity_type_id,
             "short_description": enriched_data.get('short_description', f"{tool_name} - AI-powered productivity tool"),
             "description": enriched_data.get('description', ''),
@@ -181,7 +181,7 @@ class EnhancedItemProcessor:
             "employee_count_range": self._normalize_employee_count(company_info.get('employee_count_range')),
             "funding_stage": self._normalize_funding_stage(company_info.get('funding_stage')),
             "location_summary": company_info.get('location_summary'),
-            "ref_link": actual_website_url,  # Use actual URL for ref_link too
+            "ref_link": clean_ref_link,  # Use CLEAN original URL for ref_link
             "affiliate_status": "NONE",  # Fixed: use NONE instead of PENDING
             "status": "ACTIVE",
             "scraped_review_sentiment_label": None,  # V1 - skip sentiment analysis
