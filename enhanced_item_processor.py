@@ -91,11 +91,14 @@ class EnhancedItemProcessor:
         clean_ref_link = self.comprehensive_enhancer.clean_url(website_url)  # Also clean the original for ref_link
         
         self.logger.info(f"Processing lead: {tool_name} from {source_directory}")
+        self.logger.info(f"Original URL: {website_url}")
+        self.logger.info(f"Clean website URL: {clean_website_url}")
+        self.logger.info(f"Clean ref link: {clean_ref_link}")
         
-        # Check if entity already exists using the actual website URL
-        existing_entity = self.client.check_entity_exists(actual_website_url)
+        # Check if entity already exists using the clean website URL
+        existing_entity = self.client.check_entity_exists(clean_website_url)
         if existing_entity:
-            self.logger.info(f"Entity already exists for {actual_website_url}, skipping")
+            self.logger.info(f"Entity already exists for {clean_website_url}, skipping")
             return None
         
         # Also check for duplicate names and append timestamp if needed
