@@ -19,6 +19,7 @@ class EnhancedItemProcessor:
         self.enrichment_service = data_enrichment_service
         self.taxonomy_service = taxonomy_service
         self.logo_enhancer = LogoEnhancer()  # Initialize enhanced logo service
+        self.comprehensive_enhancer = ComprehensiveDataEnhancer("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")  # Initialize comprehensive enhancer
         self.logger = logging.getLogger(__name__)
     
     def _resolve_redirect_url(self, redirect_url: str) -> str:
