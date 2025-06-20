@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 import re
 from datetime import datetime
 from logo_enhancer import LogoEnhancer
+from comprehensive_data_enhancer import ComprehensiveDataEnhancer
 
 class EnhancedItemProcessor:
     def __init__(self, ai_navigator_client, data_enrichment_service, taxonomy_service):
