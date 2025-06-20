@@ -107,23 +107,41 @@ class EnhancedItemProcessor:
         unique_tool_name = f"{tool_name} (Auto-{timestamp_suffix})" if self._name_exists(tool_name) else tool_name
         
         # Scrape basic info from the actual tool website
-        website_data = self._scrape_website_data(actual_website_url)
+        website_data = self._scrape_website_data(clean_website_url)
         
         # Get guaranteed logo using enhanced logo extraction
-        logo_url = self.logo_enhancer.get_comprehensive_logo(actual_website_url, tool_name)
+        logo_url = self.logo_enhancer.get_comprehensive_logo(clean_website_url, tool_name)
         # Validate logo URL format
         if logo_url and self._is_valid_url(logo_url):
             website_data['logo_url'] = logo_url  # Ensure we always have a valid logo
         else:
             # Fallback to a guaranteed working logo
             website_data['logo_url'] = self._get_guaranteed_fallback_logo(tool_name)
-        
-        # Enhanced data enrichment with more context
-        enriched_data = self.enrichment_service.enrich_tool_data(
+
+        # COMPREHENSIVE DATA EXTRACTION - Maximum information possible
+        self.logger.info(f"🔍 Extracting comprehensive data for world-class directory...")
+        comprehensive_data = self.comprehensive_enhancer.extract_comprehensive_data(
             tool_name, 
-            actual_website_url, 
+            clean_website_url, 
             website_data.get('description', '')
         )
+        
+        # Extract additional website intelligence
+        website_intelligence = self.comprehensive_enhancer.extract_website_intelligence(clean_website_url)
+        
+        # Merge all data sources for maximum information
+        enriched_data = {**comprehensive_data, **website_intelligence}
+        
+        self.logger.info(f"✅ Extracted {len(enriched_data)} comprehensive data fields")
+
+        # Legacy fallback to original enrichment if comprehensive fails
+        if not comprehensive_data:
+            self.logger.warning("Comprehensive data extraction failed, using legacy enrichment")
+            enriched_data = self.enrichment_service.enrich_tool_data(
+                tool_name, 
+                clean_website_url, 
+                website_data.get('description', '')
+            )
         
         # Get comprehensive company information
         company_info = self.enrichment_service.get_company_info(tool_name, actual_website_url)
